@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import { CalendarRange, Search } from "lucide-react";
 import type { ID, Supplier } from "@/lib/domain/types";
@@ -14,6 +14,12 @@ import { BOM_ROW, BomRowPill, PfePill, type BomRowStatus } from "@/components/ui
 import { BomTable, BomVersionTimeline, MacrPanel } from "./bom";
 
 type Tab = "bom" | "suppliers";
+
+/** Reads ?component= and ?bom= in the browser (static-export friendly). */
+export function SupplyChainRoute() {
+  const sp = useSearchParams();
+  return <SupplyChainExplorer componentId={sp.get("component") ?? undefined} bomId={sp.get("bom") ?? undefined} />;
+}
 
 export function SupplyChainExplorer({ componentId, bomId }: { componentId?: string; bomId?: string }) {
   const { dataset, analysis } = useWorkspace();

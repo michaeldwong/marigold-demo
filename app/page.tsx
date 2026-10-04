@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { ClientRedirect } from "@/components/shell/client-redirect";
 
 export default function Home() {
-  redirect("/overview");
+  return <ClientRedirect to="/overview" />;
 }

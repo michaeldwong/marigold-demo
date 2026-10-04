@@ -35,6 +35,20 @@ Install Node 22 using any method (nodejs.org installer, `nvm`, `fnm`, Volta or H
 
 Install Node 22 (nodejs.org binaries, NodeSource packages, or `nvm install 22`), then run the same commands. Nothing else is required.
 
+## Deploying to GitHub Pages
+
+`.github/workflows/deploy.yml` builds a static export and publishes it on every push to `main`, at `https://<user>.github.io/<repo>/`.
+
+One-time setup: in the repository, go to **Settings → Pages → Source** and choose **GitHub Actions**. (On a free GitHub plan, Pages requires a public repository.)
+
+To reproduce the Pages build locally:
+
+```bash
+STATIC_EXPORT=true PAGES_BASE_PATH=/marigold-demo npm run build   # writes ./out
+```
+
+The static site behaves like the local app: each visitor gets their own in-browser copy of the demo state.
+
 ## What's in the prototype
 
 The demo navigation is intentionally small:

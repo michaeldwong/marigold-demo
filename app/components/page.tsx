@@ -1,6 +1,6 @@
-import { redirect } from "next/navigation";
+import { ClientRedirect } from "@/components/shell/client-redirect";
 
 // The component list lives on the Eligibility page; component detail stays at /components/[id].
 export default function ComponentsPage() {
-  redirect("/eligibility");
+  return <ClientRedirect to="/eligibility" />;
 }

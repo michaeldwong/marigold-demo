@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import type { DocumentCategory } from "@/lib/domain/types";
 import type { RequirementStatus } from "@/lib/compliance/types";
@@ -14,6 +15,12 @@ import { Bar, Card, CardHeader, Empty, FilterChip, PageHeader, Pill, PrototypeNo
 import { REQUIREMENT, RequirementPill } from "@/components/ui/status";
 
 type Tab = "requirements" | "data-quality";
+
+/** Reads ?status= and ?tab= in the browser (static-export friendly). */
+export function EvidenceRoute() {
+  const sp = useSearchParams();
+  return <EvidencePage key={sp.toString()} initialStatus={sp.get("status") ?? undefined} initialTab={sp.get("tab") ?? undefined} />;
+}
 
 export function EvidencePage({ initialStatus, initialTab }: { initialStatus?: string; initialTab?: string }) {
   const [tab, setTab] = useState<Tab>(initialTab === "data-quality" ? "data-quality" : "requirements");
