@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Color is semantic and used sparingly:
+ *   ok (green)    supported / clear / complete
+ *   warn (amber)  missing / uncertain / review
+ *   bad (red)     material blocker / issue
+ *   mute (gray)   unknown / not evaluated
+ *   info (blue)   informational / selected / neutral action
+ */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --color-canvas: #f5f5f2;
+  --color-surface: #ffffff;
+  --color-subtle: #fafaf8;
+  --color-line: #e5e4df;
+  --color-line-strong: #d4d3cc;
+  --color-ink: #18181b;
+  --color-ink-2: #3f3f46;
+  --color-ink-3: #71717a;
+  --color-ink-4: #a1a1aa;
+
+  --color-side: #121316;
+  --color-side-2: #1b1c20;
+  --color-side-line: #2a2b31;
+  --color-side-ink: #e7e7ea;
+  --color-side-ink-2: #9a9aa3;
+
+  --color-ok: #15803d;
+  --color-ok-bg: #ecfdf3;
+  --color-ok-line: #bbe5c8;
+  --color-warn: #b45309;
+  --color-warn-bg: #fff8eb;
+  --color-warn-line: #f5d9a8;
+  --color-bad: #b91c1c;
+  --color-bad-bg: #fef2f2;
+  --color-bad-line: #f5c2c2;
+  --color-mute: #52525b;
+  --color-mute-bg: #f4f4f5;
+  --color-mute-line: #dcdce0;
+  --color-info: #1d4ed8;
+  --color-info-bg: #eff4ff;
+  --color-info-line: #c7d6fb;
+}
+
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Grid/flex children must be allowed to shrink so wide tables scroll inside their cards instead of widening the page. */
+.grid > *,
+main {
+  min-width: 0;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+
+/* Crisp, dense data tables */
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12.5px;
+}
+.data-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-subtle);
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-ink-3);
+  letter-spacing: 0.02em;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-line);
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: middle;
+}
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.data-table tr.clickable {
+  cursor: pointer;
+}
+.data-table tr.clickable:hover td {
+  background: #f7f7f4;
+}
+.data-table td.r,
+.data-table th.r {
+  text-align: right;
+}
+
+mark.evidence-highlight {
+  background: #fff1b8;
+  box-shadow: 0 0 0 2px #fff1b8;
+  border-radius: 2px;
+  color: inherit;
+}
+
+@keyframes drawer-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.drawer-in {
+  animation: drawer-in 160ms ease-out;
+}
+
+/* Thin scrollbars in dense panes */
+.thin-scroll {
+  scrollbar-width: thin;
+}

@@ -1,0 +1,18 @@
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+.DS_Store
+npm-debug.log*
+
+# AdventureWorks sample data (regenerate with data/adventureworks/load_sqlite.py)
+data/adventureworks/raw/
+data/adventureworks/*.zip
+data/adventureworks/*.db
+
+# Source documents (regulatory PDFs, diligence paper with confidential customer notes, UI references)
+# are kept locally and not committed.
+docs/
