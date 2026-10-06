@@ -16,3 +16,7 @@ data/adventureworks/*.db
 # Source documents (regulatory PDFs, diligence paper with confidential customer notes, UI references)
 # are kept locally and not committed.
 docs/
+
+# Python tooling for the synthetic dataset generator
+data/volterra_synthetic/.venv/
+__pycache__/

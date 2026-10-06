@@ -2,15 +2,18 @@
   "name": "45x-compliance-os",
   "version": "0.1.0",
   "private": true,
-  "description": "Frontend prototype of 45X Compliance OS — an evidence-backed manufacturing compliance workspace for the Section 45X Advanced Manufacturing Production Credit.",
+  "description": "Frontend prototype of 45X Compliance OS \u2014 an evidence-backed manufacturing compliance workspace for the Section 45X Advanced Manufacturing Production Credit.",
   "engines": {
     "node": ">=20.9.0"
   },
   "scripts": {
+    "predev": "node scripts/sync-demo-files.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-demo-files.mjs",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "analyze": "data/volterra_synthetic/.venv/bin/python pipeline/analyze_customer_files.py"
   },
   "dependencies": {
     "lucide-react": "^1.49.0",

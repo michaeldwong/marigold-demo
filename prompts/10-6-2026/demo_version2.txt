@@ -1,0 +1,843 @@
+You are working on the Marigold prototype: a dashboard for helping U.S. battery manufacturers understand and substantiate potential IRC Section 45X Advanced Manufacturing Production Credits.
+
+Your task is to substantially simplify the existing dashboard and populate it using the NEW synthetic Volterra Battery Systems dataset that already exists in this repository.
+
+This is a CUSTOMER DEMO, not a production system.
+
+The primary goal is to demonstrate what Marigold could eventually do once an automated LLM/document-ingestion pipeline exists.
+
+There is currently no live LLM pipeline. For this demo, YOU should analyze the provided customer-facing synthetic files ahead of time and populate the dashboard with the resulting structured analysis.
+
+The experience should simulate:
+
+customer files
+    ↓
+future Marigold extraction / normalization / analysis
+    ↓
+structured facts + evidence
+    ↓
+45X rules
+    ↓
+simple customer-facing insights
+
+==================================================
+0. IMPORTANT: INSPECT THE REPOSITORY FIRST
+==================================================
+
+Before making changes:
+
+1. Inspect the current application and understand:
+   - framework
+   - routes/pages
+   - components
+   - current dashboard structure
+   - current mock/placeholder data
+   - existing document/evidence UI
+
+2. Locate the newly generated Volterra synthetic dataset.
+
+3. Locate ALL Section 45X tax-law / IRS / Treasury / regulatory documents currently stored in this repository (docs/compliance/).
+
+4. Read the relevant 45X documents carefully before implementing eligibility or credit calculations.
+
+DO NOT rely solely on your general knowledge of Section 45X.
+
+The repository's 45X source documents are the authoritative source material for this demo.
+
+For every rule used in:
+- eligibility
+- calculations
+- evidence requirements
+- supplier/material analysis
+- other compliance determinations
+
+identify the exact supporting 45X source document.
+
+Do not invent tax requirements.
+
+If the repository's tax documents do not establish a conclusion, represent the conclusion as unresolved/requiring review rather than guessing.
+
+==================================================
+1. DATA ACCESS RULES
+==================================================
+
+The synthetic dataset may contain internal testing files such as:
+
+- ground_truth.json
+- expected_results.md
+- intentional_issues.md
+- similar INTERNAL_TEST_ONLY files
+
+These are TEST ORACLES.
+
+DO NOT use these files to derive the customer-facing analysis.
+
+The dashboard analysis must be derived ONLY from files that the fictional customer would actually have provided.
+
+For example:
+
+- PLM exports
+- MES exports
+- ERP exports
+- BOMs
+- supplier records
+- sales records
+- qualification reports
+- supplier attestations
+- facility/company records
+- other customer-facing evidence
+
+This distinction is extremely important.
+
+For example:
+
+If ground_truth.json knows the ultimate parent of a supplier, but none of the customer-facing evidence establishes that fact, the dashboard MUST say:
+
+"Ultimate parent unresolved"
+
+It must NOT use the hidden ground truth.
+
+AFTER the customer-facing analysis has been generated, you may separately compare it against internal expected-results / ground-truth files to validate implementation correctness.
+
+Never expose internal test-only files in the customer UI.
+
+==================================================
+2. TAX YEAR AND PRODUCT SCOPE
+==================================================
+
+This demo concerns:
+
+TAX YEAR: 2026
+
+COMPANY:
+Volterra Battery Systems, Inc.
+
+PRODUCT SCOPE:
+Battery cells manufactured by Volterra.
+
+The dataset contains two primary battery-cell products:
+
+- VX-2170 — cylindrical NMC battery cell
+- VX-LFP50 — prismatic LFP battery cell
+
+Volterra purchases materials/components used to manufacture these cells.
+
+Materials such as:
+- cathode/electrode active material
+- graphite/anode material
+- separator
+- electrolyte
+- foils/current collectors
+- casing/hardware
+- etc.
+
+should still be modeled and displayed because they are relevant to the product BOM, suppliers, sourcing, evidence, and applicable 45X compliance analysis.
+
+However, do NOT treat Volterra as separately claiming an electrode-active-material credit unless the supplied data and requirements explicitly say otherwise.
+
+==================================================
+3. PRODUCT PHILOSOPHY
+==================================================
+
+The current dashboard is too complicated.
+
+This demo will be shown to people who may know VERY LITTLE about Section 45X.
+
+The interface should therefore answer four questions extremely clearly:
+
+1. DOES VOLTERRA QUALIFY?
+2. HOW MUCH 45X CREDIT DO WE ESTIMATE?
+3. WHERE DOES THAT CREDIT COME FROM / HOW WAS IT CALCULATED?
+4. WHAT INFORMATION OR EVIDENCE IS MISSING?
+
+Everything in the product should support one of those four questions.
+
+If an existing element does not materially help answer one of those questions, strongly consider removing it.
+
+We want:
+
+- clean
+- simple
+- calm
+- trustworthy
+- explainable
+- evidence-backed
+- easy for a non-tax-expert to understand
+
+We do NOT want:
+
+- dense enterprise dashboards
+- excessive tags
+- dozens of metrics
+- unnecessary graphs
+- unnecessary tables
+- walls of text
+- unexplained tax terminology
+- fake precision
+- visual noise
+
+Prefer progressive disclosure:
+show the important conclusion first and let users drill down for details.
+
+==================================================
+4. REMOVE EXISTING PLACEHOLDER CONTENT
+==================================================
+
+Remove the existing fake/placeholder dashboard data.
+
+The application should now reflect ONLY the new Volterra synthetic dataset.
+
+Remove obsolete mock:
+- products
+- suppliers
+- credits
+- evidence
+- documents
+- issues
+- facilities
+- charts
+- metrics
+- other placeholder entities
+
+Do not leave old fake data mixed with Volterra data.
+
+==================================================
+5. REMOVE PEOPLE / ROLES
+==================================================
+
+Remove people profiles and references to individual people/roles from the UI for now.
+
+We do NOT need things like:
+
+- assigned user
+- tax manager
+- reviewer profile
+- owner avatar
+- task assignee
+- team-member chips
+- individual roles
+- people cards
+
+This demo is about understanding the company's 45X position, not workflow management.
+
+Remove these concepts wherever they create UI noise.
+
+==================================================
+6. SIMPLIFY NAVIGATION
+==================================================
+
+The primary navigation should be:
+
+1. Overview
+2. Eligibility
+3. Credits
+4. Products
+5. Missing Information
+6. Sourcing
+
+Remove or hide unnecessary existing top-level sections.
+
+Do not create separate pages for every manufacturing concept.
+
+In particular, avoid exposing technical system terminology such as PLM/MES/ERP as top-level navigation concepts.
+
+Those are sources, not customer outcomes.
+
+==================================================
+7. OVERVIEW PAGE
+==================================================
+
+The Overview should be VERY SIMPLE.
+
+It should answer the four core questions at a high level.
+
+A user should understand Volterra's situation within roughly 10–15 seconds.
+
+Show:
+
+A. ELIGIBILITY
+
+A concise high-level status.
+
+Examples:
+
+✓ Likely eligible for Section 45X
+
+or
+
+⚠ Eligibility requires additional information
+
+or
+
+✕ Not currently eligible
+
+Use the actual evidence and rules from the repository.
+
+Do NOT claim definitive legal eligibility if unresolved issues prevent that conclusion.
+
+B. ESTIMATED CREDIT
+
+Show the estimated 2026 Section 45X credit prominently.
+
+For example:
+
+Estimated 2026 45X Credit
+$XX.XM
+
+This number MUST be derived deterministically from the supplied customer data and applicable repository tax rules.
+
+C. WHERE THE CREDIT COMES FROM
+
+Show an extremely simple breakdown by the two products.
+
+For example:
+
+VX-2170        $X.XM
+VX-LFP50       $X.XM
+
+Do not add unnecessary graphs if two simple rows/cards communicate this better.
+
+D. MISSING INFORMATION / READINESS
+
+Show a concise summary such as:
+
+5 items need attention
+
+Critical: 1
+High: 2
+Medium: 2
+
+and show perhaps the top 2–3 most important unresolved items.
+
+Provide a clear link to "View missing information."
+
+Do NOT fill the overview with detailed evidence tables.
+
+==================================================
+8. ELIGIBILITY PAGE
+==================================================
+
+The Eligibility page should answer:
+
+"Why does Marigold think we qualify or not qualify?"
+
+Start with a prominent banner.
+
+Examples:
+
+✓ Volterra appears eligible for the Section 45X battery-cell credit
+
+or
+
+⚠ Volterra's eligibility cannot yet be fully established
+
+or
+
+✕ Volterra does not currently satisfy [requirement]
+
+Use a large checkmark / warning / X and simple language.
+
+Below that, enumerate the MAIN eligibility requirements.
+
+Do not display dozens of obscure rules.
+
+Show only requirements that materially affect this Volterra claim.
+
+For each important requirement, display:
+
+✓ satisfied
+✕ not satisfied
+⚠ unresolved / requires review
+
+Examples of the kinds of things that may matter, depending on the actual repository rules:
+
+✓ Eligible battery-cell product
+✓ Produced by claimant
+✓ Produced at U.S. facility
+✓ Applicable technical requirements
+✓ Qualifying sales
+⚠ Supplier/material requirement unresolved
+
+DO NOT assume these exact rules. Derive the actual set from the repository's 45X documents.
+
+For each requirement:
+
+- explain it in 1–2 plain-English sentences
+- show the relevant Volterra fact
+- link/reference the exact customer file(s) supporting the fact
+- reference the exact 45X source document/rule supporting the requirement
+
+If something is unresolved:
+
+show exactly what additional action/evidence is needed.
+
+Example:
+
+⚠ VX-2170 Rev C qualification evidence
+
+Existing qualification testing covers Rev B.
+Rev C became effective July 1, 2026.
+No evidence establishing whether the prior qualification remains applicable was provided.
+
+NEXT STEP:
+Obtain/review qualification evidence applicable to Rev C.
+
+Do NOT have the software make legal/engineering judgments where the supplied evidence is insufficient.
+
+==================================================
+9. CREDITS PAGE
+==================================================
+
+The Credits page should answer:
+
+"How much money do we expect to receive, and how did Marigold calculate it?"
+
+Use the same simple visual philosophy as Eligibility.
+
+At the top:
+
+Estimated 2026 Section 45X Credit
+$XX.XM
+
+Then break it down by product:
+
+VX-2170
+Estimated credit: $X.XM
+
+VX-LFP50
+Estimated credit: $X.XM
+
+For each product, make the calculation explainable.
+
+Show only the inputs actually required by the applicable 45X calculation.
+
+For example, if applicable:
+
+qualifying units sold
+× capacity per cell
+= qualifying kWh
+× applicable $/kWh rate
+= estimated credit
+
+But use the exact calculation required by the repository's 45X documents.
+
+Every material calculation input should reference:
+
+1. the customer file(s) that supplied the underlying value
+2. the 45X tax document that establishes the calculation/rate/rule
+
+A non-tax-expert should be able to understand:
+
+"We think this product generated $X because Volterra sold Y qualifying cells with Z capacity and Section 45X provides [applicable calculation]."
+
+Do not add unnecessary monthly graphs, trend charts, or dense tables unless they materially improve understanding.
+
+==================================================
+10. PRODUCTS PAGE
+==================================================
+
+The Products page should provide a clean list of:
+
+VX-2170
+Cylindrical NMC battery cell
+
+VX-LFP50
+Prismatic LFP battery cell
+
+For each product show the important information only:
+
+- product
+- chemistry
+- form factor
+- revision(s)
+- relevant technical specifications
+- manufacturing facility
+- 2026 production
+- 2026 qualifying / reviewed sales
+- estimated credit
+- eligibility/evidence status
+
+Do not show every database field.
+
+Each product should be expandable.
+
+Inside the expanded view, show:
+
+MATERIALS / BOM
+
+List the important materials/components used in that product.
+
+For each material show useful information such as:
+
+- material/component
+- supplier
+- source/manufacturing country if available/relevant
+- applicable revision/effective period
+- evidence status
+- important issue if one exists
+
+Again, do not dump every BOM column into the UI.
+
+The goal is comprehension.
+
+The VX-2170 revision change should be represented clearly if supported by the data.
+
+For example:
+
+Rev B — Jan 1 through Jun 30
+Rev C — Jul 1 onward
+
+and explain material/supplier differences between them where relevant.
+
+==================================================
+11. MISSING INFORMATION PAGE
+==================================================
+
+This page should answer:
+
+"What is preventing us from having a fully supported claim?"
+
+Aggregate ALL important missing, expired, conflicting, ambiguous, or review-required information.
+
+Organize by TYPE.
+
+Potential sections:
+
+PRODUCT / TECHNICAL
+SUPPLY CHAIN / SUPPLIER
+PRODUCTION / RECONCILIATION
+SALES / TRANSACTIONS
+CORPORATE / CLAIMANT
+OTHER
+
+Only create categories that actually contain issues.
+
+Every issue should have:
+
+- concise title
+- plain-English explanation
+- affected product/material/period
+- why the information matters
+- what needs to happen next
+- relevant source file(s)
+- severity tag
+
+Use a SMALL severity vocabulary:
+
+CRITICAL
+HIGH
+MEDIUM
+LOW
+
+Do not add lots of additional tags.
+
+Severity should reflect potential impact on the claim/evidence, not arbitrary UI styling.
+
+Examples from the synthetic dataset may include things like:
+
+- supplier ultimate parent unresolved
+- expired supplier attestation
+- qualification report does not cover current revision
+- conflicting technical specifications
+- production reconciliation discrepancy
+- ambiguous sales transaction
+
+But derive the actual list from the customer-facing files.
+
+Do not read intentional_issues.md to discover these.
+
+==================================================
+12. SOURCING PAGE
+==================================================
+
+Rename the existing "Documents" section to:
+
+Sourcing
+
+This page should represent the customer-facing source material Marigold analyzed.
+
+Populate it with ALL relevant customer-facing files from the synthetic dataset.
+
+Do NOT show internal test-only files.
+
+Significantly simplify the existing Documents UI.
+
+REMOVE concepts such as:
+
+- integrations
+- intake
+- document workflow status
+- unnecessary category metadata
+- unnecessary status fields
+- assignee/owner
+- people
+- verbose metadata
+
+A simple structure is enough:
+
+FILE
+SOURCE
+USED FOR
+
+Example:
+
+production_orders.csv
+MES export
+Production quantities and facility
+
+bom.xlsx
+PLM export
+Product composition and revision history
+
+VX2170_qualification.pdf
+Engineering / Quality
+VX-2170 technical specifications
+
+Eastbay_attestation.pdf
+Supplier
+Supplier evidence
+
+Users should be able to click/open a source file where technically feasible.
+
+For each file, optionally show:
+
+"Used in"
+
+and link to the eligibility/credit/product/missing-information conclusions that rely on it.
+
+==================================================
+13. EVIDENCE / PROVENANCE
+==================================================
+
+This is a critical product behavior.
+
+Important customer-facing conclusions should be traceable to their sources.
+
+For example:
+
+"VX-2170 Rev B capacity = X"
+
+should reference the exact customer file containing that information.
+
+"4,812 cells produced"
+
+should reference the relevant production record.
+
+"Eastbay ultimate parent unresolved"
+
+should reference the supplier records/documents that were checked and explain that sufficient ownership evidence was not found.
+
+"45X battery-cell rate = X"
+
+should reference the exact 45X tax source in the repository.
+
+Where possible, preserve:
+
+- filename
+- sheet/table
+- row/record identifier
+- page number
+- section
+- relevant source location
+
+Do not merely say:
+
+"Source: ERP"
+
+when the exact file/record is available.
+
+The goal is that someone can understand:
+
+CONCLUSION
+    ↓
+FACTS
+    ↓
+CUSTOMER EVIDENCE
+    +
+45X RULE
+    ↓
+RESULT
+
+==================================================
+14. CREATE A STRUCTURED ANALYSIS LAYER
+==================================================
+
+Do NOT hard-code random explanatory text directly throughout React components.
+
+Create a clean structured representation of the precomputed analysis.
+
+For example, something conceptually like:
+
+dashboard_analysis.json
+
+or TypeScript data structures containing:
+
+company
+tax_year
+eligibility
+credit_summary
+products
+materials
+production
+sales
+evidence
+issues
+source_files
+tax_rules
+
+Important assertions should be able to reference:
+
+- customer evidence IDs
+- tax rule IDs
+
+For example:
+
+eligibility_requirement:
+    id
+    title
+    status
+    explanation
+    affected_products
+    evidence_refs
+    tax_rule_refs
+    next_action
+
+credit_calculation:
+    product
+    inputs
+    calculation
+    amount
+    evidence_refs
+    tax_rule_refs
+
+issue:
+    title
+    severity
+    type
+    description
+    affected_entities
+    evidence_refs
+    next_action
+
+This structured analysis is meant to simulate the OUTPUT of the future Marigold AI/ingestion pipeline.
+
+The UI should consume this structured layer.
+
+==================================================
+15. ANALYZE CUSTOMER DATA FIRST
+==================================================
+
+Before implementing the UI:
+
+A. Analyze the customer-facing Volterra dataset.
+
+B. Produce a concise internal analysis containing:
+
+- claimant
+- facility
+- products
+- revisions
+- technical specs
+- BOMs
+- suppliers
+- production totals
+- sales totals
+- evidence
+- unresolved/conflicting information
+
+C. Apply ONLY the applicable rules found in the repository's 45X source documents.
+
+D. Calculate expected credits deterministically.
+
+E. Create the structured dashboard analysis.
+
+F. Only then wire that analysis into the UI.
+
+Do not let the visual design drive the analysis.
+
+==================================================
+16. VALIDATION
+==================================================
+
+After deriving the customer-facing analysis WITHOUT using internal test oracles:
+
+compare the result against:
+
+- ground_truth.json
+- expected_results.md
+- intentional_issues.md
+
+if these exist.
+
+This comparison is only for validation.
+
+Generate an internal validation report identifying:
+
+- expected findings correctly detected
+- expected findings missed
+- false issues introduced
+- calculation differences
+- unsupported conclusions
+- accidental use of hidden ground truth
+
+Fix genuine implementation problems.
+
+Do NOT alter the customer-facing analysis merely to force it to match ground truth when the customer-facing evidence does not support that conclusion.
+
+==================================================
+17. DESIGN DIRECTION
+==================================================
+
+Preserve the existing application's overall visual quality where useful, but simplify aggressively.
+
+Desired aesthetic:
+
+- lots of whitespace
+- strong hierarchy
+- large primary numbers
+- simple cards
+- restrained use of color
+- check / warning / X semantics
+- very few tags
+- minimal graphs
+- minimal tables
+- short explanations
+- obvious drill-down
+- professional enough for CFO/tax/accounting audiences
+- understandable to someone who has never heard of 45X
+
+Avoid:
+
+- dashboard overload
+- 10 cards above the fold
+- decorative charts
+- tiny metadata
+- excessive pills/badges
+- repeated status labels
+- excessive tax jargon
+- paragraphs where one sentence works
+- duplicated information across pages
+
+If a graph does not communicate something better than a number or short list, remove the graph.
+
+If a table has only 2–3 important facts, consider cards/rows instead.
+
+==================================================
+18. TAX TERMINOLOGY
+==================================================
+
+Assume the user knows almost nothing about Section 45X.
+
+Use plain language first.
+
+For example:
+
+"Produced in the United States"
+
+is preferable to exposing an unexplained statutory term.
+
+Where tax terminology is necessary, briefly explain it.
+
+Do not turn the UI into tax documentation.
+
+The tax source references exist so users/reviewers can inspect WHY Marigold applied a rule, not so every screen

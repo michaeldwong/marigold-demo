@@ -1,0 +1,3 @@
+item_code,item_description,plm_part_ref,routing_version,default_line,uom,status
+VX2170_R7,21700 NMC CELL R7,VX-2170,R7,CYL-01,EA,ACTIVE
+LFP50-PR-A,PRISMATIC LFP CELL 50AH,VX-LFP50,A,PRS-01,EA,ACTIVE

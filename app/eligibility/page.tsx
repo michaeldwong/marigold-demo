@@ -1,5 +1,5 @@
-import { EligibilityMap } from "@/components/eligibility/eligibility-map";
+import { EligibilityPage } from "@/components/pages/eligibility";
 
-export default function EligibilityPage() {
-  return <EligibilityMap />;
+export default function Page() {
+  return <EligibilityPage />;
 }

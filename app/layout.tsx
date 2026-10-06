@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
-import { WorkspaceProvider } from "@/lib/state/workspace";
-import { InspectorProvider } from "@/components/provenance/inspector";
 import { AppShell } from "@/components/shell/app-shell";
+import { SourcesProvider } from "@/components/sources/sources-drawer";
 
 export const metadata: Metadata = {
-  title: "45X Compliance OS",
-  description: "Evidence-backed manufacturing compliance workspace for the Section 45X Advanced Manufacturing Production Credit (prototype).",
+  title: "Marigold - Section 45X analysis",
+  description: "Demo: Section 45X battery-cell credit analysis for a fictional manufacturer, Volterra Battery Systems.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <WorkspaceProvider>
-          <InspectorProvider>
-            <AppShell>{children}</AppShell>
-          </InspectorProvider>
-        </WorkspaceProvider>
+        <SourcesProvider>
+          <AppShell>{children}</AppShell>
+        </SourcesProvider>
       </body>
     </html>
   );

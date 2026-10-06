@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   ...(staticExport && { output: "export" as const, trailingSlash: true }),
   ...(basePath && { basePath }),
+  // Lets the UI prefix links to files in public/ (e.g. source documents) on GitHub Pages.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath ?? "" },
 };
 
 export default nextConfig;

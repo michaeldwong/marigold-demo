@@ -1,0 +1,2609 @@
+{
+  "meta": {
+    "description": "PRIVATE test oracle for the Volterra synthetic dataset. Not a customer-provided file.",
+    "tax_year": 2026,
+    "generated_by": "generate_dataset.py",
+    "all_entities_fictional": true
+  },
+  "claimant": {
+    "legal_name": "Volterra Battery Systems, Inc.",
+    "entity_type": "C corporation",
+    "state_of_incorporation": "Delaware",
+    "ein": "00-0004521",
+    "ein_note": "SYNTHETIC - not a real Employer Identification Number",
+    "hq_address": "4100 Lakeshore Industrial Drive, Holland, MI 49423, United States",
+    "tax_year": 2026,
+    "tax_year_start": "2026-01-01",
+    "tax_year_end": "2026-12-31",
+    "related_entities": [],
+    "claimant_for_45x": true
+  },
+  "facility": {
+    "facility_id": "FAC-001",
+    "erp_plant_code": "MI01",
+    "mes_site_code": "HOLLAND-01",
+    "name": "Volterra Holland Cell Plant",
+    "street": "4100 Lakeshore Industrial Drive",
+    "city": "Holland",
+    "state": "MI",
+    "postal_code": "49423",
+    "country": "United States",
+    "owner": "Volterra Battery Systems, Inc.",
+    "operator": "Volterra Battery Systems, Inc.",
+    "operations_start": "2026-01-12",
+    "lines": [
+      {
+        "erp_work_center": "WC-L1",
+        "mes_line": "CYL-01",
+        "description": "Line 1 - cylindrical 21700 cell assembly"
+      },
+      {
+        "erp_work_center": "WC-L2",
+        "mes_line": "PRS-01",
+        "description": "Line 2 - prismatic cell assembly"
+      }
+    ]
+  },
+  "products": {
+    "VX-2170": {
+      "plm_id": "VX-2170",
+      "name": "VX-2170 Cylindrical NMC Cell",
+      "component_type": "battery cell",
+      "format": "21700 cylindrical",
+      "chemistry": "NMC811 cathode / graphite anode",
+      "nominal_voltage_v": 3.6,
+      "plm_rated_capacity_ah": 5.0,
+      "true_rated_capacity_ah": 5.0,
+      "diameter_mm": 21.0,
+      "height_mm": 70.0,
+      "mass_g": 68.5,
+      "max_continuous_discharge_a": 20.0,
+      "charge_voltage_v": 4.2,
+      "cutoff_voltage_v": 2.5,
+      "erp_material": "MAT-10004721",
+      "erp_description": "CELL 21700 NMC 5.0AH VX-2170",
+      "mes_item": "VX2170_R7",
+      "mes_description": "21700 NMC CELL R7",
+      "mes_routing_version": "R7",
+      "line": "L1",
+      "revisions": [
+        {
+          "rev": "B",
+          "effective_from": "2026-01-15",
+          "effective_to": "2026-06-30",
+          "change_notice": "ECN-2025-118",
+          "change_summary": "Production release for Line 1."
+        },
+        {
+          "rev": "C",
+          "effective_from": "2026-07-01",
+          "effective_to": null,
+          "change_notice": "ECN-2026-031",
+          "change_summary": "Separator changed from SEP-016 (16 um) to SEP-021 (12 um ceramic-coated) for cost reduction."
+        }
+      ],
+      "volume_l": 0.02425
+    },
+    "VX-LFP50": {
+      "plm_id": "VX-LFP50",
+      "name": "VX-LFP50 Prismatic LFP Cell",
+      "component_type": "battery cell",
+      "format": "prismatic, aluminum case",
+      "chemistry": "LFP cathode / graphite anode",
+      "nominal_voltage_v": 3.2,
+      "plm_rated_capacity_ah": 50.0,
+      "true_rated_capacity_ah": 48.6,
+      "length_mm": 148.0,
+      "width_mm": 27.0,
+      "height_mm": 101.0,
+      "mass_g": 905.0,
+      "max_continuous_discharge_a": 50.0,
+      "charge_voltage_v": 3.65,
+      "cutoff_voltage_v": 2.5,
+      "erp_material": "MAT-10004755",
+      "erp_description": "CELL PRISM LFP 50AH VX-LFP50",
+      "mes_item": "LFP50-PR-A",
+      "mes_description": "PRISMATIC LFP CELL 50AH",
+      "mes_routing_version": "A",
+      "line": "L2",
+      "revisions": [
+        {
+          "rev": "A",
+          "effective_from": "2026-05-15",
+          "effective_to": null,
+          "change_notice": "ECN-2026-012",
+          "change_summary": "Production release for Line 2."
+        }
+      ],
+      "volume_l": 0.4036
+    }
+  },
+  "identifier_mappings": {
+    "VX-2170": {
+      "plm": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "mes_item": "VX2170_R7"
+    },
+    "VX-LFP50": {
+      "plm": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "mes_item": "LFP50-PR-A"
+    },
+    "_facility": {
+      "erp_plant": "MI01",
+      "mes_site": "HOLLAND-01",
+      "facility_id": "FAC-001"
+    }
+  },
+  "materials": [
+    {
+      "plm_part": "RM-CAM-811",
+      "erp_material": "MAT-30000102",
+      "description": "CATHODE ACTIVE MATERIAL NMC811",
+      "erp_uom": "KG",
+      "bom_uom": "G",
+      "base": "dg",
+      "supplier": "0000100231",
+      "price": 38.0,
+      "lot_size_base": 2500000,
+      "lot_prefix": "GPC",
+      "electrode_active_material": true,
+      "manufacturing_site": "Lincoln, NE, United States"
+    },
+    {
+      "plm_part": "RM-CAM-LFP",
+      "erp_material": "MAT-30000108",
+      "description": "CATHODE ACTIVE MATERIAL LFP",
+      "erp_uom": "KG",
+      "bom_uom": "G",
+      "base": "dg",
+      "supplier": "0000100236",
+      "price": 9.5,
+      "lot_size_base": 10000000,
+      "lot_prefix": "PPM",
+      "electrode_active_material": true,
+      "manufacturing_site": "Pittsburg, KS, United States"
+    },
+    {
+      "plm_part": "RM-AAM-SG",
+      "erp_material": "MAT-30000205",
+      "description": "ANODE ACTIVE MATERIAL SYNTH GRAPHITE",
+      "erp_uom": "KG",
+      "bom_uom": "G",
+      "base": "dg",
+      "supplier": "0000100244",
+      "price": 8.2,
+      "lot_size_base": 5000000,
+      "lot_prefix": "KGC",
+      "electrode_active_material": true,
+      "manufacturing_site": "Becancour, QC, Canada"
+    },
+    {
+      "plm_part": "RM-SEP-016",
+      "erp_material": "MAT-30000411",
+      "description": "SEPARATOR PE 16UM",
+      "erp_uom": "M2",
+      "bom_uom": "M2",
+      "base": "cm2",
+      "supplier": "0000100251",
+      "price": 1.1,
+      "lot_size_base": 25000000,
+      "lot_prefix": "TMB",
+      "electrode_active_material": false,
+      "manufacturing_site": "Charlotte, NC, United States"
+    },
+    {
+      "plm_part": "RM-SEP-021",
+      "erp_material": "MAT-30000415",
+      "description": "SEPARATOR PE 12UM CERAMIC COATED",
+      "erp_uom": "M2",
+      "bom_uom": "M2",
+      "base": "cm2",
+      "supplier": "0000100268",
+      "price": 0.85,
+      "lot_size_base": 12000000,
+      "lot_prefix": "ESC",
+      "electrode_active_material": false,
+      "manufacturing_site": "Senai, Johor, Malaysia"
+    },
+    {
+      "plm_part": "RM-ELY-LP1",
+      "erp_material": "MAT-30000520",
+      "description": "ELECTROLYTE 1M LIPF6 EC/EMC",
+      "erp_uom": "KG",
+      "bom_uom": "G",
+      "base": "dg",
+      "supplier": "0000100273",
+      "price": 9.8,
+      "lot_size_base": null,
+      "drum_kg": 25,
+      "lot_prefix": "NVE",
+      "electrode_active_material": false,
+      "manufacturing_site": "Sundsvall, Sweden"
+    },
+    {
+      "plm_part": "RM-CAN-217",
+      "erp_material": "MAT-30000610",
+      "description": "CAN+CAP ASSY 21700 NI-PLATED",
+      "erp_uom": "EA",
+      "bom_uom": "EA",
+      "base": "EA",
+      "supplier": "0000100289",
+      "price": 0.115,
+      "lot_size_base": 12000,
+      "lot_prefix": "LCS",
+      "electrode_active_material": false,
+      "manufacturing_site": "Sandusky, OH, United States"
+    },
+    {
+      "plm_part": "RM-CASE-P50",
+      "erp_material": "MAT-30000655",
+      "description": "PRISMATIC AL CASE+LID 148X27X101",
+      "erp_uom": "EA",
+      "bom_uom": "EA",
+      "base": "EA",
+      "supplier": "0000100289",
+      "price": 2.85,
+      "lot_size_base": 3000,
+      "lot_prefix": "LCP",
+      "electrode_active_material": false,
+      "manufacturing_site": "Sandusky, OH, United States"
+    }
+  ],
+  "subassemblies": {
+    "SA-CE-2170": "CATHODE ELECTRODE ASSY VX-2170",
+    "SA-AE-2170": "ANODE ELECTRODE ASSY VX-2170",
+    "SA-CE-LFP50": "CATHODE ELECTRODE ASSY VX-LFP50",
+    "SA-AE-LFP50": "ANODE ELECTRODE ASSY VX-LFP50"
+  },
+  "boms": {
+    "VX-2170 rev B": [
+      {
+        "level": 1,
+        "find_no": "10",
+        "component": "SA-CE-2170",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      },
+      {
+        "level": 2,
+        "find_no": "10.10",
+        "component": "RM-CAM-811",
+        "qty": 24.5,
+        "uom": "G",
+        "subassembly_parent": "SA-CE-2170"
+      },
+      {
+        "level": 1,
+        "find_no": "20",
+        "component": "SA-AE-2170",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      },
+      {
+        "level": 2,
+        "find_no": "20.10",
+        "component": "RM-AAM-SG",
+        "qty": 14.2,
+        "uom": "G",
+        "subassembly_parent": "SA-AE-2170"
+      },
+      {
+        "level": 1,
+        "find_no": "30",
+        "component": "RM-SEP-016",
+        "qty": 0.081,
+        "uom": "M2",
+        "subassembly_parent": null
+      },
+      {
+        "level": 1,
+        "find_no": "40",
+        "component": "RM-ELY-LP1",
+        "qty": 5.2,
+        "uom": "G",
+        "subassembly_parent": null
+      },
+      {
+        "level": 1,
+        "find_no": "50",
+        "component": "RM-CAN-217",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      }
+    ],
+    "VX-2170 rev C": [
+      {
+        "level": 1,
+        "find_no": "10",
+        "component": "SA-CE-2170",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      },
+      {
+        "level": 2,
+        "find_no": "10.10",
+        "component": "RM-CAM-811",
+        "qty": 24.5,
+        "uom": "G",
+        "subassembly_parent": "SA-CE-2170"
+      },
+      {
+        "level": 1,
+        "find_no": "20",
+        "component": "SA-AE-2170",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      },
+      {
+        "level": 2,
+        "find_no": "20.10",
+        "component": "RM-AAM-SG",
+        "qty": 14.2,
+        "uom": "G",
+        "subassembly_parent": "SA-AE-2170"
+      },
+      {
+        "level": 1,
+        "find_no": "30",
+        "component": "RM-SEP-021",
+        "qty": 0.081,
+        "uom": "M2",
+        "subassembly_parent": null
+      },
+      {
+        "level": 1,
+        "find_no": "40",
+        "component": "RM-ELY-LP1",
+        "qty": 5.2,
+        "uom": "G",
+        "subassembly_parent": null
+      },
+      {
+        "level": 1,
+        "find_no": "50",
+        "component": "RM-CAN-217",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      }
+    ],
+    "VX-LFP50 rev A": [
+      {
+        "level": 1,
+        "find_no": "10",
+        "component": "SA-CE-LFP50",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      },
+      {
+        "level": 2,
+        "find_no": "10.10",
+        "component": "RM-CAM-LFP",
+        "qty": 380,
+        "uom": "G",
+        "subassembly_parent": "SA-CE-LFP50"
+      },
+      {
+        "level": 1,
+        "find_no": "20",
+        "component": "SA-AE-LFP50",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      },
+      {
+        "level": 2,
+        "find_no": "20.10",
+        "component": "RM-AAM-SG",
+        "qty": 165,
+        "uom": "G",
+        "subassembly_parent": "SA-AE-LFP50"
+      },
+      {
+        "level": 1,
+        "find_no": "30",
+        "component": "RM-SEP-016",
+        "qty": 1.15,
+        "uom": "M2",
+        "subassembly_parent": null
+      },
+      {
+        "level": 1,
+        "find_no": "40",
+        "component": "RM-ELY-LP1",
+        "qty": 140,
+        "uom": "G",
+        "subassembly_parent": null
+      },
+      {
+        "level": 1,
+        "find_no": "50",
+        "component": "RM-CASE-P50",
+        "qty": 1,
+        "uom": "EA",
+        "subassembly_parent": null
+      }
+    ]
+  },
+  "suppliers": [
+    {
+      "erp_id": "0000100231",
+      "name": "Great Plains Cathode LLC",
+      "country": "US",
+      "street": "2200 Prairie Gateway Blvd",
+      "city": "Lincoln",
+      "region": "NE",
+      "postal": "68521",
+      "materials": [
+        "MAT-30000102"
+      ],
+      "procurement_parent_note": "Great Plains Materials Group, Inc. (US)",
+      "true_immediate_parent": "Great Plains Materials Group, Inc.",
+      "true_ultimate_parent": "Great Plains Materials Group, Inc.",
+      "true_ultimate_parent_country": "United States",
+      "true_ownership_pct": 100
+    },
+    {
+      "erp_id": "0000100236",
+      "name": "Prairie Phosphate Materials Inc.",
+      "country": "US",
+      "street": "88 Industrial Park Road",
+      "city": "Pittsburg",
+      "region": "KS",
+      "postal": "66762",
+      "materials": [
+        "MAT-30000108"
+      ],
+      "procurement_parent_note": "Independent (privately held)",
+      "true_immediate_parent": null,
+      "true_ultimate_parent": "Prairie Phosphate Materials Inc. (independent)",
+      "true_ultimate_parent_country": "United States",
+      "true_ownership_pct": null
+    },
+    {
+      "erp_id": "0000100244",
+      "name": "Kestrel Graphite Corp.",
+      "country": "CA",
+      "street": "1450 Rue Industrielle",
+      "city": "Becancour",
+      "region": "QC",
+      "postal": "G9H 2T4",
+      "materials": [
+        "MAT-30000205"
+      ],
+      "procurement_parent_note": "Kestrel Resources Ltd. (Canada)",
+      "true_immediate_parent": "Kestrel Resources Ltd.",
+      "true_ultimate_parent": "Kestrel Resources Ltd.",
+      "true_ultimate_parent_country": "Canada",
+      "true_ownership_pct": 100
+    },
+    {
+      "erp_id": "0000100251",
+      "name": "Tamarack Membrane Inc.",
+      "country": "US",
+      "street": "610 Riverside Commerce Dr",
+      "city": "Charlotte",
+      "region": "NC",
+      "postal": "28214",
+      "materials": [
+        "MAT-30000411"
+      ],
+      "procurement_parent_note": "Independent (privately held)",
+      "true_immediate_parent": null,
+      "true_ultimate_parent": "Tamarack Membrane Inc. (independent)",
+      "true_ultimate_parent_country": "United States",
+      "true_ownership_pct": null
+    },
+    {
+      "erp_id": "0000100268",
+      "name": "Eastbay Separator Co., Ltd.",
+      "country": "MY",
+      "street": "Lot 21, Jalan Perindustrian 4",
+      "city": "Senai",
+      "region": "Johor",
+      "postal": "81400",
+      "materials": [
+        "MAT-30000415"
+      ],
+      "procurement_parent_note": "Eastbay Holdings Pte. Ltd. (Singapore) per supplier onboarding form",
+      "true_immediate_parent": "Eastbay Holdings Pte. Ltd. (Singapore)",
+      "true_ultimate_parent": "Huaying Advanced Materials Group Co., Ltd.",
+      "true_ultimate_parent_country": "China",
+      "true_ownership_pct": 62
+    },
+    {
+      "erp_id": "0000100273",
+      "name": "Nordvik Electrolyte AB",
+      "country": "SE",
+      "street": "Industrivagen 14",
+      "city": "Sundsvall",
+      "region": "",
+      "postal": "856 33",
+      "materials": [
+        "MAT-30000520"
+      ],
+      "procurement_parent_note": "Nordvik Kemi Holding AB (Sweden)",
+      "true_immediate_parent": "Nordvik Kemi Holding AB",
+      "true_ultimate_parent": "Nordvik Kemi Holding AB",
+      "true_ultimate_parent_country": "Sweden",
+      "true_ownership_pct": 100
+    },
+    {
+      "erp_id": "0000100289",
+      "name": "Lakeshore Can & Stamping Inc.",
+      "country": "US",
+      "street": "905 Harbor Industrial Way",
+      "city": "Sandusky",
+      "region": "OH",
+      "postal": "44870",
+      "materials": [
+        "MAT-30000610",
+        "MAT-30000655"
+      ],
+      "procurement_parent_note": "Lakeshore Industries Holdings LLC (US)",
+      "true_immediate_parent": "Lakeshore Industries Holdings LLC",
+      "true_ultimate_parent": "Lakeshore Industries Holdings LLC",
+      "true_ultimate_parent_country": "United States",
+      "true_ownership_pct": 100
+    }
+  ],
+  "supplier_documents": {
+    "0000100231": {
+      "file": "GreatPlainsCathode_Supplier_Attestation_2026.pdf",
+      "kind": "SUPPLIER ATTESTATION",
+      "coverage": [
+        "2026-01-01",
+        "2026-12-31"
+      ],
+      "signatory": "Rebecca Lindqvist, Chief Financial Officer",
+      "signed": "2025-12-15",
+      "immediate_parent": "Great Plains Materials Group, Inc. (Delaware, USA) - 100%",
+      "ultimate_parent": "Great Plains Materials Group, Inc. (Delaware, USA)"
+    },
+    "0000100236": {
+      "file": "PrairiePhosphate_Supplier_Questionnaire_2026.pdf",
+      "kind": "SUPPLIER QUESTIONNAIRE",
+      "coverage": [
+        "2026-01-01",
+        "2026-12-31"
+      ],
+      "signatory": "Thomas Ewing, President",
+      "signed": "2026-04-20",
+      "immediate_parent": "None - privately held by founders",
+      "ultimate_parent": "None - Prairie Phosphate Materials Inc. is not owned by any other entity"
+    },
+    "0000100244": {
+      "file": "KestrelGraphite_Supplier_Attestation_2026.pdf",
+      "kind": "SUPPLIER ATTESTATION",
+      "coverage": [
+        "2026-01-01",
+        "2026-12-31"
+      ],
+      "signatory": "Marie-Claude Tremblay, VP Finance",
+      "signed": "2025-12-18",
+      "immediate_parent": "Kestrel Resources Ltd. (Ontario, Canada) - 100%",
+      "ultimate_parent": "Kestrel Resources Ltd. (Ontario, Canada); widely held, listed on the TSX"
+    },
+    "0000100251": {
+      "file": "TamarackMembrane_Supplier_Attestation_2026.pdf",
+      "kind": "SUPPLIER ATTESTATION",
+      "coverage": [
+        "2026-01-01",
+        "2026-12-31"
+      ],
+      "signatory": "Gregory Boateng, Chief Executive Officer",
+      "signed": "2025-12-10",
+      "immediate_parent": "None - privately held",
+      "ultimate_parent": "None - Tamarack Membrane Inc. is not owned by any other entity"
+    },
+    "0000100268": {
+      "file": "EastbaySeparator_Supplier_Declaration_2026.pdf",
+      "kind": "SUPPLIER DECLARATION",
+      "coverage": [
+        "2026-06-01",
+        "2027-05-31"
+      ],
+      "signatory": "Lim Wei Jie, General Manager",
+      "signed": "2026-05-22",
+      "immediate_parent": "Eastbay Holdings Pte. Ltd. (Singapore) - 100%",
+      "ultimate_parent": "Not disclosed - confidential"
+    },
+    "0000100273": {
+      "file": "NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf",
+      "kind": "SUPPLIER ATTESTATION",
+      "coverage": [
+        "2025-07-01",
+        "2026-06-30"
+      ],
+      "signatory": "Anders Holm, Chief Financial Officer",
+      "signed": "2025-06-20",
+      "immediate_parent": "Nordvik Kemi Holding AB (Sweden) - 100%",
+      "ultimate_parent": "Nordvik Kemi Holding AB (Sweden)",
+      "true_note": "A renewal for 2026-07-01 to 2027-06-30 was signed by Nordvik but never sent to Volterra."
+    },
+    "0000100289": {
+      "file": "LakeshoreCan_Supplier_Attestation_2026.pdf",
+      "kind": "SUPPLIER ATTESTATION",
+      "coverage": [
+        "2026-01-01",
+        "2026-12-31"
+      ],
+      "signatory": "Dana Kowalczyk, Controller",
+      "signed": "2025-12-12",
+      "immediate_parent": "Lakeshore Industries Holdings LLC (Ohio, USA) - 100%",
+      "ultimate_parent": "Lakeshore Industries Holdings LLC (Ohio, USA)"
+    }
+  },
+  "customers": {
+    "0000300112": {
+      "name": "Ridgeline Power Tools, Inc.",
+      "city": "Columbus",
+      "region": "OH",
+      "related_to_volterra": false
+    },
+    "0000300147": {
+      "name": "Northgate E-Bike Co.",
+      "city": "Portland",
+      "region": "OR",
+      "related_to_volterra": false
+    },
+    "0000300163": {
+      "name": "Granite Grid Storage LLC",
+      "city": "Austin",
+      "region": "TX",
+      "related_to_volterra": false
+    },
+    "0000300188": {
+      "name": "Circuit Loop Recycling LLC",
+      "city": "Grand Rapids",
+      "region": "MI",
+      "related_to_volterra": false
+    }
+  },
+  "production_orders": [
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0101",
+      "erp_order": "1000231",
+      "start": "2026-02-09",
+      "end": "2026-02-20",
+      "planned": 5000,
+      "reported_good": 4812,
+      "true_good": 4812,
+      "scrap": 188,
+      "fg_lot": "V21260209",
+      "bom_rev": "B",
+      "line": "L1"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0114",
+      "erp_order": "1000248",
+      "start": "2026-03-09",
+      "end": "2026-03-20",
+      "planned": 6000,
+      "reported_good": 5874,
+      "true_good": 5874,
+      "scrap": 126,
+      "fg_lot": "V21260309",
+      "bom_rev": "B",
+      "line": "L1"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0132",
+      "erp_order": "1000266",
+      "start": "2026-04-06",
+      "end": "2026-04-17",
+      "planned": 6500,
+      "reported_good": 6391,
+      "true_good": 6391,
+      "scrap": 109,
+      "fg_lot": "V21260406",
+      "bom_rev": "B",
+      "line": "L1"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0157",
+      "erp_order": "1000290",
+      "start": "2026-05-26",
+      "end": "2026-06-12",
+      "planned": 7000,
+      "reported_good": 6868,
+      "true_good": 6868,
+      "scrap": 132,
+      "fg_lot": "V21260526",
+      "bom_rev": "B",
+      "line": "L1"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0163",
+      "erp_order": "1000297",
+      "start": "2026-06-08",
+      "end": "2026-06-19",
+      "planned": 1200,
+      "reported_good": 1146,
+      "true_good": 1146,
+      "scrap": 54,
+      "fg_lot": "LP5260608",
+      "bom_rev": "A",
+      "line": "L2"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0171",
+      "erp_order": "1000305",
+      "start": "2026-07-06",
+      "end": "2026-07-17",
+      "planned": 6500,
+      "reported_good": 6212,
+      "true_good": 6150,
+      "scrap": 288,
+      "fg_lot": "V21260706",
+      "bom_rev": "C",
+      "line": "L1"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0172",
+      "erp_order": "1000306",
+      "start": "2026-07-06",
+      "end": "2026-07-17",
+      "planned": 1500,
+      "reported_good": 1452,
+      "true_good": 1452,
+      "scrap": 48,
+      "fg_lot": "LP5260706",
+      "bom_rev": "A",
+      "line": "L2"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0188",
+      "erp_order": "1000322",
+      "start": "2026-08-03",
+      "end": "2026-08-14",
+      "planned": 1800,
+      "reported_good": 1761,
+      "true_good": 1761,
+      "scrap": 39,
+      "fg_lot": "LP5260803",
+      "bom_rev": "A",
+      "line": "L2"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0195",
+      "erp_order": "1000330",
+      "start": "2026-08-17",
+      "end": "2026-08-28",
+      "planned": 7000,
+      "reported_good": 6905,
+      "true_good": 6905,
+      "scrap": 95,
+      "fg_lot": "V21260817",
+      "bom_rev": "C",
+      "line": "L1"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0209",
+      "erp_order": "1000344",
+      "start": "2026-09-08",
+      "end": "2026-09-18",
+      "planned": 2000,
+      "reported_good": 1958,
+      "true_good": 1958,
+      "scrap": 42,
+      "fg_lot": "LP5260908",
+      "bom_rev": "A",
+      "line": "L2"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0221",
+      "erp_order": "1000357",
+      "start": "2026-10-05",
+      "end": "2026-10-16",
+      "planned": 7000,
+      "reported_good": 6887,
+      "true_good": 6887,
+      "scrap": 113,
+      "fg_lot": "V21261005",
+      "bom_rev": "C",
+      "line": "L1"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0222",
+      "erp_order": "1000358",
+      "start": "2026-10-05",
+      "end": "2026-10-16",
+      "planned": 2000,
+      "reported_good": 1972,
+      "true_good": 1972,
+      "scrap": 28,
+      "fg_lot": "LP5261005",
+      "bom_rev": "A",
+      "line": "L2"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0240",
+      "erp_order": "1000375",
+      "start": "2026-11-02",
+      "end": "2026-11-13",
+      "planned": 2200,
+      "reported_good": 2163,
+      "true_good": 2163,
+      "scrap": 37,
+      "fg_lot": "LP5261102",
+      "bom_rev": "A",
+      "line": "L2"
+    },
+    {
+      "product": "VX-2170",
+      "mes_order": "MO-26-0258",
+      "erp_order": "1000391",
+      "start": "2026-11-30",
+      "end": "2026-12-11",
+      "planned": 7500,
+      "reported_good": 7322,
+      "true_good": 7322,
+      "scrap": 178,
+      "fg_lot": "V21261130",
+      "bom_rev": "C",
+      "line": "L1"
+    },
+    {
+      "product": "VX-LFP50",
+      "mes_order": "MO-26-0259",
+      "erp_order": "1000392",
+      "start": "2026-12-01",
+      "end": "2026-12-11",
+      "planned": 2100,
+      "reported_good": 2040,
+      "true_good": 2040,
+      "scrap": 60,
+      "fg_lot": "LP5261201",
+      "bom_rev": "A",
+      "line": "L2"
+    }
+  ],
+  "material_lots": [
+    {
+      "material": "RM-CAM-811",
+      "lot": "GPC2602-001",
+      "received": "2026-02-04",
+      "supplier": "0000100231",
+      "size": 250.0
+    },
+    {
+      "material": "RM-CAM-811",
+      "lot": "GPC2603-002",
+      "received": "2026-03-04",
+      "supplier": "0000100231",
+      "size": 250.0
+    },
+    {
+      "material": "RM-CAM-811",
+      "lot": "GPC2605-003",
+      "received": "2026-05-21",
+      "supplier": "0000100231",
+      "size": 250.0
+    },
+    {
+      "material": "RM-CAM-811",
+      "lot": "GPC2607-004",
+      "received": "2026-07-01",
+      "supplier": "0000100231",
+      "size": 250.0
+    },
+    {
+      "material": "RM-CAM-811",
+      "lot": "GPC2609-005",
+      "received": "2026-09-30",
+      "supplier": "0000100231",
+      "size": 250.0
+    },
+    {
+      "material": "RM-CAM-811",
+      "lot": "GPC2611-006",
+      "received": "2026-11-25",
+      "supplier": "0000100231",
+      "size": 250.0
+    },
+    {
+      "material": "RM-CAM-LFP",
+      "lot": "PPM2606-001",
+      "received": "2026-06-03",
+      "supplier": "0000100236",
+      "size": 1000.0
+    },
+    {
+      "material": "RM-CAM-LFP",
+      "lot": "PPM2607-002",
+      "received": "2026-07-01",
+      "supplier": "0000100236",
+      "size": 1000.0
+    },
+    {
+      "material": "RM-CAM-LFP",
+      "lot": "PPM2609-003",
+      "received": "2026-09-03",
+      "supplier": "0000100236",
+      "size": 1000.0
+    },
+    {
+      "material": "RM-CAM-LFP",
+      "lot": "PPM2609-004",
+      "received": "2026-09-30",
+      "supplier": "0000100236",
+      "size": 1000.0
+    },
+    {
+      "material": "RM-CAM-LFP",
+      "lot": "PPM2610-005",
+      "received": "2026-10-28",
+      "supplier": "0000100236",
+      "size": 1000.0
+    },
+    {
+      "material": "RM-AAM-SG",
+      "lot": "KGC2602-001",
+      "received": "2026-02-04",
+      "supplier": "0000100244",
+      "size": 500.0
+    },
+    {
+      "material": "RM-AAM-SG",
+      "lot": "KGC2606-002",
+      "received": "2026-06-03",
+      "supplier": "0000100244",
+      "size": 500.0
+    },
+    {
+      "material": "RM-AAM-SG",
+      "lot": "KGC2607-003",
+      "received": "2026-07-29",
+      "supplier": "0000100244",
+      "size": 500.0
+    },
+    {
+      "material": "RM-AAM-SG",
+      "lot": "KGC2609-004",
+      "received": "2026-09-03",
+      "supplier": "0000100244",
+      "size": 500.0
+    },
+    {
+      "material": "RM-AAM-SG",
+      "lot": "KGC2609-005",
+      "received": "2026-09-30",
+      "supplier": "0000100244",
+      "size": 500.0
+    },
+    {
+      "material": "RM-AAM-SG",
+      "lot": "KGC2611-006",
+      "received": "2026-11-25",
+      "supplier": "0000100244",
+      "size": 500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2602-001",
+      "received": "2026-02-04",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2606-002",
+      "received": "2026-06-03",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2607-003",
+      "received": "2026-07-01",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2609-004",
+      "received": "2026-09-03",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2609-005",
+      "received": "2026-09-30",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2610-006",
+      "received": "2026-10-28",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-016",
+      "lot": "TMB2611-007",
+      "received": "2026-11-26",
+      "supplier": "0000100251",
+      "size": 2500.0
+    },
+    {
+      "material": "RM-SEP-021",
+      "lot": "ESC2607-001",
+      "received": "2026-07-01",
+      "supplier": "0000100268",
+      "size": 1200.0
+    },
+    {
+      "material": "RM-SEP-021",
+      "lot": "ESC2609-002",
+      "received": "2026-09-30",
+      "supplier": "0000100268",
+      "size": 1200.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2602-001",
+      "received": "2026-02-04",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2603-002",
+      "received": "2026-03-04",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2604-003",
+      "received": "2026-04-01",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2605-004",
+      "received": "2026-05-21",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2606-005",
+      "received": "2026-06-03",
+      "supplier": "0000100273",
+      "size": 175.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2607-006",
+      "received": "2026-07-01",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2607-007",
+      "received": "2026-07-01",
+      "supplier": "0000100273",
+      "size": 225.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2607-008",
+      "received": "2026-07-29",
+      "supplier": "0000100273",
+      "size": 275.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2608-009",
+      "received": "2026-08-12",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2609-010",
+      "received": "2026-09-03",
+      "supplier": "0000100273",
+      "size": 300.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2609-011",
+      "received": "2026-09-30",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2609-012",
+      "received": "2026-09-30",
+      "supplier": "0000100273",
+      "size": 300.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2610-013",
+      "received": "2026-10-28",
+      "supplier": "0000100273",
+      "size": 325.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2611-014",
+      "received": "2026-11-25",
+      "supplier": "0000100273",
+      "size": 50.0
+    },
+    {
+      "material": "RM-ELY-LP1",
+      "lot": "NVE2611-015",
+      "received": "2026-11-26",
+      "supplier": "0000100273",
+      "size": 300.0
+    },
+    {
+      "material": "RM-CAN-217",
+      "lot": "LCS2602-001",
+      "received": "2026-02-04",
+      "supplier": "0000100289",
+      "size": 12000
+    },
+    {
+      "material": "RM-CAN-217",
+      "lot": "LCS2604-002",
+      "received": "2026-04-01",
+      "supplier": "0000100289",
+      "size": 12000
+    },
+    {
+      "material": "RM-CAN-217",
+      "lot": "LCS2605-003",
+      "received": "2026-05-21",
+      "supplier": "0000100289",
+      "size": 12000
+    },
+    {
+      "material": "RM-CAN-217",
+      "lot": "LCS2608-004",
+      "received": "2026-08-12",
+      "supplier": "0000100289",
+      "size": 12000
+    },
+    {
+      "material": "RM-CAN-217",
+      "lot": "LCS2611-005",
+      "received": "2026-11-25",
+      "supplier": "0000100289",
+      "size": 12000
+    },
+    {
+      "material": "RM-CASE-P50",
+      "lot": "LCP2606-001",
+      "received": "2026-06-03",
+      "supplier": "0000100289",
+      "size": 3000
+    },
+    {
+      "material": "RM-CASE-P50",
+      "lot": "LCP2607-002",
+      "received": "2026-07-29",
+      "supplier": "0000100289",
+      "size": 3000
+    },
+    {
+      "material": "RM-CASE-P50",
+      "lot": "LCP2609-003",
+      "received": "2026-09-03",
+      "supplier": "0000100289",
+      "size": 3000
+    },
+    {
+      "material": "RM-CASE-P50",
+      "lot": "LCP2610-004",
+      "received": "2026-10-28",
+      "supplier": "0000100289",
+      "size": 3000
+    },
+    {
+      "material": "RM-CASE-P50",
+      "lot": "LCP2611-005",
+      "received": "2026-11-26",
+      "supplier": "0000100289",
+      "size": 3000
+    }
+  ],
+  "sales": [
+    {
+      "invoice": "90041208",
+      "item": 10,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260209",
+      "qty": 1000,
+      "price": 3.95,
+      "date": "2026-02-26"
+    },
+    {
+      "invoice": "90041209",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260209",
+      "qty": 2400,
+      "price": 3.85,
+      "date": "2026-03-10"
+    },
+    {
+      "invoice": "90041210",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260209",
+      "qty": 1412,
+      "price": 3.85,
+      "date": "2026-04-08"
+    },
+    {
+      "invoice": "90041210",
+      "item": 20,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260309",
+      "qty": 1388,
+      "price": 3.85,
+      "date": "2026-04-08"
+    },
+    {
+      "invoice": "90041211",
+      "item": 10,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260309",
+      "qty": 2000,
+      "price": 3.95,
+      "date": "2026-04-22"
+    },
+    {
+      "invoice": "90041212",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260309",
+      "qty": 2486,
+      "price": 3.85,
+      "date": "2026-05-12"
+    },
+    {
+      "invoice": "90041212",
+      "item": 20,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260406",
+      "qty": 514,
+      "price": 3.85,
+      "date": "2026-05-12"
+    },
+    {
+      "invoice": "90041213",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260406",
+      "qty": 3200,
+      "price": 3.85,
+      "date": "2026-06-09"
+    },
+    {
+      "invoice": "90041214",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260608",
+      "qty": 1000,
+      "price": 58.0,
+      "date": "2026-07-07"
+    },
+    {
+      "invoice": "90041215",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260406",
+      "qty": 2677,
+      "price": 3.85,
+      "date": "2026-07-14"
+    },
+    {
+      "invoice": "90041215",
+      "item": 20,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260526",
+      "qty": 723,
+      "price": 3.85,
+      "date": "2026-07-14"
+    },
+    {
+      "invoice": "90041216",
+      "item": 10,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260526",
+      "qty": 2600,
+      "price": 3.95,
+      "date": "2026-07-28"
+    },
+    {
+      "invoice": "90041217",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260608",
+      "qty": 146,
+      "price": 58.0,
+      "date": "2026-08-04"
+    },
+    {
+      "invoice": "90041217",
+      "item": 20,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260706",
+      "qty": 1154,
+      "price": 58.0,
+      "date": "2026-08-04"
+    },
+    {
+      "invoice": "90041218",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260526",
+      "qty": 3300,
+      "price": 3.85,
+      "date": "2026-08-11"
+    },
+    {
+      "invoice": "90041219",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260706",
+      "qty": 298,
+      "price": 58.0,
+      "date": "2026-09-01"
+    },
+    {
+      "invoice": "90041219",
+      "item": 20,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260803",
+      "qty": 1202,
+      "price": 58.0,
+      "date": "2026-09-01"
+    },
+    {
+      "invoice": "90041220",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260526",
+      "qty": 245,
+      "price": 3.85,
+      "date": "2026-09-15"
+    },
+    {
+      "invoice": "90041220",
+      "item": 20,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260706",
+      "qty": 3355,
+      "price": 3.85,
+      "date": "2026-09-15"
+    },
+    {
+      "invoice": "90041221",
+      "item": 10,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260706",
+      "qty": 2200,
+      "price": 3.95,
+      "date": "2026-09-22"
+    },
+    {
+      "invoice": "90041222",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260803",
+      "qty": 559,
+      "price": 58.0,
+      "date": "2026-10-06"
+    },
+    {
+      "invoice": "90041222",
+      "item": 20,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260908",
+      "qty": 1041,
+      "price": 58.0,
+      "date": "2026-10-06"
+    },
+    {
+      "invoice": "90041223",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260706",
+      "qty": 595,
+      "price": 3.85,
+      "date": "2026-10-13"
+    },
+    {
+      "invoice": "90041223",
+      "item": 20,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260817",
+      "qty": 2905,
+      "price": 3.85,
+      "date": "2026-10-13"
+    },
+    {
+      "invoice": "90041224",
+      "item": 10,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260817",
+      "qty": 3000,
+      "price": 3.95,
+      "date": "2026-10-27"
+    },
+    {
+      "invoice": "90041225",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5260908",
+      "qty": 917,
+      "price": 58.0,
+      "date": "2026-11-03"
+    },
+    {
+      "invoice": "90041225",
+      "item": 20,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5261005",
+      "qty": 783,
+      "price": 58.0,
+      "date": "2026-11-03"
+    },
+    {
+      "invoice": "90041226",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21260817",
+      "qty": 1000,
+      "price": 3.85,
+      "date": "2026-11-10"
+    },
+    {
+      "invoice": "90041226",
+      "item": 20,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21261005",
+      "qty": 2700,
+      "price": 3.85,
+      "date": "2026-11-10"
+    },
+    {
+      "invoice": "90041233",
+      "item": 10,
+      "customer": "0000300188",
+      "product": null,
+      "erp_material": "MAT-10004759",
+      "description": "VXLFP50 CELL B-GRADE",
+      "batch": "",
+      "qty": 140,
+      "price": 9.0,
+      "date": "2026-11-24"
+    },
+    {
+      "invoice": "90041227",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5261005",
+      "qty": 1189,
+      "price": 58.0,
+      "date": "2026-12-01"
+    },
+    {
+      "invoice": "90041227",
+      "item": 20,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5261102",
+      "qty": 511,
+      "price": 58.0,
+      "date": "2026-12-01"
+    },
+    {
+      "invoice": "90041228",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21261005",
+      "qty": 3600,
+      "price": 3.85,
+      "date": "2026-12-08"
+    },
+    {
+      "invoice": "90041229",
+      "item": 10,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21261005",
+      "qty": 587,
+      "price": 3.95,
+      "date": "2026-12-21"
+    },
+    {
+      "invoice": "90041229",
+      "item": 20,
+      "customer": "0000300147",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21261130",
+      "qty": 2613,
+      "price": 3.95,
+      "date": "2026-12-21"
+    },
+    {
+      "invoice": "90041230",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5261102",
+      "qty": 1200,
+      "price": 58.0,
+      "date": "2026-12-29"
+    },
+    {
+      "invoice": "90041231",
+      "item": 10,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5261102",
+      "qty": 452,
+      "price": 58.0,
+      "date": "2027-01-08"
+    },
+    {
+      "invoice": "90041231",
+      "item": 20,
+      "customer": "0000300163",
+      "product": "VX-LFP50",
+      "erp_material": "MAT-10004755",
+      "description": "CELL PRISM LFP 50AH VX-LFP50",
+      "batch": "LP5261201",
+      "qty": 1048,
+      "price": 58.0,
+      "date": "2027-01-08"
+    },
+    {
+      "invoice": "90041232",
+      "item": 10,
+      "customer": "0000300112",
+      "product": "VX-2170",
+      "erp_material": "MAT-10004721",
+      "description": "CELL 21700 NMC 5.0AH VX-2170",
+      "batch": "V21261130",
+      "qty": 3800,
+      "price": 3.85,
+      "date": "2027-01-12"
+    }
+  ],
+  "bgrade_truth": {
+    "date": "2026-11-24",
+    "customer": "0000300188",
+    "erp_material": "MAT-10004759",
+    "description": "VXLFP50 CELL B-GRADE",
+    "qty": 140,
+    "price": 9.0,
+    "true_origin": "Downgraded VX-LFP50 cells set aside from 2026 scrap counts after failing outgoing capacity QC."
+  },
+  "evidence_index": [
+    {
+      "fact": "VX-2170 report scope",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 1,
+      "text": "Product: VX-2170 Revision B"
+    },
+    {
+      "fact": "VX-2170 nominal voltage",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 2,
+      "text": "Nominal voltage: 3.6 V"
+    },
+    {
+      "fact": "VX-2170 external volume",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 2,
+      "text": "External volume: 24.25 mL"
+    },
+    {
+      "fact": "VX-2170 rated capacity",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 3,
+      "text": "Declared rated capacity: 5.0 Ah"
+    },
+    {
+      "fact": "VX-2170 rated energy",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 3,
+      "text": "Rated energy (nominal voltage x rated capacity): 18.00 Wh"
+    },
+    {
+      "fact": "VX-2170 energy density",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 3,
+      "text": "Volumetric energy density (rated energy / external volume): 742 Wh/L"
+    },
+    {
+      "fact": "VX-2170 capacity-to-power ratio",
+      "file": "QUALITY/VX2170_RevB_Qualification_Report.pdf",
+      "page": 4,
+      "text": "Capacity-to-power ratio (rated energy / max continuous power): 0.25 : 1"
+    },
+    {
+      "fact": "VX-LFP50 report scope",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 1,
+      "text": "Product: VX-LFP50 Revision A"
+    },
+    {
+      "fact": "VX-LFP50 nominal voltage",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 2,
+      "text": "Nominal voltage: 3.2 V"
+    },
+    {
+      "fact": "VX-LFP50 external volume",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 2,
+      "text": "External volume: 403.60 mL"
+    },
+    {
+      "fact": "VX-LFP50 rated capacity",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 3,
+      "text": "Declared rated capacity: 48.6 Ah"
+    },
+    {
+      "fact": "VX-LFP50 rated energy",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 3,
+      "text": "Rated energy (nominal voltage x rated capacity): 155.52 Wh"
+    },
+    {
+      "fact": "VX-LFP50 energy density",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 3,
+      "text": "Volumetric energy density (rated energy / external volume): 385 Wh/L"
+    },
+    {
+      "fact": "VX-LFP50 capacity-to-power ratio",
+      "file": "QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf",
+      "page": 4,
+      "text": "Capacity-to-power ratio (rated energy / max continuous power): 0.97 : 1"
+    },
+    {
+      "fact": "Great Plains Cathode LLC legal name",
+      "file": "SUPPLIER_EVIDENCE/GreatPlainsCathode_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Great Plains Cathode LLC"
+    },
+    {
+      "fact": "Great Plains Cathode LLC immediate parent",
+      "file": "SUPPLIER_EVIDENCE/GreatPlainsCathode_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: Great Plains Materials Group, Inc. (Delaware, USA) - 100%"
+    },
+    {
+      "fact": "Great Plains Cathode LLC ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/GreatPlainsCathode_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: Great Plains Materials Group, Inc. (Delaware, USA)"
+    },
+    {
+      "fact": "Great Plains Cathode LLC coverage period",
+      "file": "SUPPLIER_EVIDENCE/GreatPlainsCathode_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2026-01-01 through 2026-12-31"
+    },
+    {
+      "fact": "Great Plains Cathode LLC penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/GreatPlainsCathode_Supplier_Attestation_2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Prairie Phosphate Materials Inc. legal name",
+      "file": "SUPPLIER_EVIDENCE/PrairiePhosphate_Supplier_Questionnaire_2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Prairie Phosphate Materials Inc."
+    },
+    {
+      "fact": "Prairie Phosphate Materials Inc. immediate parent",
+      "file": "SUPPLIER_EVIDENCE/PrairiePhosphate_Supplier_Questionnaire_2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: None - privately held by founders"
+    },
+    {
+      "fact": "Prairie Phosphate Materials Inc. ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/PrairiePhosphate_Supplier_Questionnaire_2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: None - Prairie Phosphate Materials Inc. is not owned by any other entity"
+    },
+    {
+      "fact": "Prairie Phosphate Materials Inc. coverage period",
+      "file": "SUPPLIER_EVIDENCE/PrairiePhosphate_Supplier_Questionnaire_2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2026-01-01 through 2026-12-31"
+    },
+    {
+      "fact": "Prairie Phosphate Materials Inc. penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/PrairiePhosphate_Supplier_Questionnaire_2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Kestrel Graphite Corp. legal name",
+      "file": "SUPPLIER_EVIDENCE/KestrelGraphite_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Kestrel Graphite Corp."
+    },
+    {
+      "fact": "Kestrel Graphite Corp. immediate parent",
+      "file": "SUPPLIER_EVIDENCE/KestrelGraphite_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: Kestrel Resources Ltd. (Ontario, Canada) - 100%"
+    },
+    {
+      "fact": "Kestrel Graphite Corp. ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/KestrelGraphite_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: Kestrel Resources Ltd. (Ontario, Canada); widely held, listed on the TSX"
+    },
+    {
+      "fact": "Kestrel Graphite Corp. coverage period",
+      "file": "SUPPLIER_EVIDENCE/KestrelGraphite_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2026-01-01 through 2026-12-31"
+    },
+    {
+      "fact": "Kestrel Graphite Corp. penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/KestrelGraphite_Supplier_Attestation_2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Tamarack Membrane Inc. legal name",
+      "file": "SUPPLIER_EVIDENCE/TamarackMembrane_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Tamarack Membrane Inc."
+    },
+    {
+      "fact": "Tamarack Membrane Inc. immediate parent",
+      "file": "SUPPLIER_EVIDENCE/TamarackMembrane_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: None - privately held"
+    },
+    {
+      "fact": "Tamarack Membrane Inc. ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/TamarackMembrane_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: None - Tamarack Membrane Inc. is not owned by any other entity"
+    },
+    {
+      "fact": "Tamarack Membrane Inc. coverage period",
+      "file": "SUPPLIER_EVIDENCE/TamarackMembrane_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2026-01-01 through 2026-12-31"
+    },
+    {
+      "fact": "Tamarack Membrane Inc. penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/TamarackMembrane_Supplier_Attestation_2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Eastbay Separator Co., Ltd. legal name",
+      "file": "SUPPLIER_EVIDENCE/EastbaySeparator_Supplier_Declaration_2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Eastbay Separator Co., Ltd."
+    },
+    {
+      "fact": "Eastbay Separator Co., Ltd. immediate parent",
+      "file": "SUPPLIER_EVIDENCE/EastbaySeparator_Supplier_Declaration_2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: Eastbay Holdings Pte. Ltd. (Singapore) - 100%"
+    },
+    {
+      "fact": "Eastbay Separator Co., Ltd. ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/EastbaySeparator_Supplier_Declaration_2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: Not disclosed - confidential"
+    },
+    {
+      "fact": "Eastbay Separator Co., Ltd. coverage period",
+      "file": "SUPPLIER_EVIDENCE/EastbaySeparator_Supplier_Declaration_2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2026-06-01 through 2027-05-31"
+    },
+    {
+      "fact": "Eastbay Separator Co., Ltd. penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/EastbaySeparator_Supplier_Declaration_2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Nordvik Electrolyte AB legal name",
+      "file": "SUPPLIER_EVIDENCE/NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Nordvik Electrolyte AB"
+    },
+    {
+      "fact": "Nordvik Electrolyte AB immediate parent",
+      "file": "SUPPLIER_EVIDENCE/NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: Nordvik Kemi Holding AB (Sweden) - 100%"
+    },
+    {
+      "fact": "Nordvik Electrolyte AB ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: Nordvik Kemi Holding AB (Sweden)"
+    },
+    {
+      "fact": "Nordvik Electrolyte AB coverage period",
+      "file": "SUPPLIER_EVIDENCE/NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2025-07-01 through 2026-06-30"
+    },
+    {
+      "fact": "Nordvik Electrolyte AB penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Lakeshore Can & Stamping Inc. legal name",
+      "file": "SUPPLIER_EVIDENCE/LakeshoreCan_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Supplier legal name: Lakeshore Can & Stamping Inc."
+    },
+    {
+      "fact": "Lakeshore Can & Stamping Inc. immediate parent",
+      "file": "SUPPLIER_EVIDENCE/LakeshoreCan_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Immediate parent: Lakeshore Industries Holdings LLC (Ohio, USA) - 100%"
+    },
+    {
+      "fact": "Lakeshore Can & Stamping Inc. ultimate parent",
+      "file": "SUPPLIER_EVIDENCE/LakeshoreCan_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Ultimate parent: Lakeshore Industries Holdings LLC (Ohio, USA)"
+    },
+    {
+      "fact": "Lakeshore Can & Stamping Inc. coverage period",
+      "file": "SUPPLIER_EVIDENCE/LakeshoreCan_Supplier_Attestation_2026.pdf",
+      "page": 1,
+      "text": "Coverage period: materials delivered to Volterra from 2026-01-01 through 2026-12-31"
+    },
+    {
+      "fact": "Lakeshore Can & Stamping Inc. penalty of perjury",
+      "file": "SUPPLIER_EVIDENCE/LakeshoreCan_Supplier_Attestation_2026.pdf",
+      "page": 2,
+      "text": "Signed under penalty of perjury by an authorized officer of the supplier."
+    },
+    {
+      "fact": "Kestrel graphite country of origin",
+      "file": "SUPPLIER_EVIDENCE/KestrelGraphite_Certificate_of_Origin_2026.pdf",
+      "page": 1,
+      "text": "Country of origin of goods: Canada"
+    }
+  ],
+  "intentional_issues": [
+    {
+      "id": "ISS-01",
+      "title": "Product and site identifiers differ across PLM, MES and ERP",
+      "category": "Identity reconciliation",
+      "planted": "Each product has a different identifier in each system: VX-2170: PLM VX-2170 / ERP MAT-10004721 / MES VX2170_R7; VX-LFP50: PLM VX-LFP50 / ERP MAT-10004755 / MES LFP50-PR-A. The plant is ERP plant MI01 and MES site HOLLAND-01.",
+      "why_realistic": "PLM, ERP and MES are administered by different teams and assign their own keys.",
+      "truth": "The identifiers refer to the same two products and the same plant.",
+      "customer_evidence": "PLM/product_master.xlsx ERP_MATERIAL_NO; MES/item_master.csv plm_part_ref; ERP descriptions contain the PLM number; COMPANY/company_and_facility.xlsx Facilities sheet maps ERP_PLANT to MES_SITE.",
+      "expected_behavior": "Reconcile each product and the plant to a single identity using the cross-references in the customer files, and show the mapping with its source fields.",
+      "expected_status": "RESOLVED_BY_CROSS_REFERENCE",
+      "human_review": false,
+      "affected": [
+        "VX-2170",
+        "VX-LFP50"
+      ]
+    },
+    {
+      "id": "ISS-02",
+      "title": "Eastbay Separator ultimate parent not disclosed",
+      "category": "Supplier ownership - missing evidence",
+      "planted": "SUPPLIER_EVIDENCE/EastbaySeparator_Supplier_Declaration_2026.pdf page 1 states 'Ultimate parent: Not disclosed - confidential'; ERP supplier master notes only the Singapore immediate parent.",
+      "why_realistic": "Foreign suppliers commonly disclose the immediate holding company but decline to identify beneficial owners.",
+      "truth": "Ultimate parent is Huaying Advanced Materials Group Co., Ltd. (China), 62% indirect ownership. This appears ONLY in ground_truth.json.",
+      "customer_evidence": "Immediate parent Eastbay Holdings Pte. Ltd. (Singapore). Ultimate parent not disclosed.",
+      "expected_behavior": "Mark the ultimate-parent fact for Eastbay Separator as MISSING EVIDENCE and flag the lots that consumed MAT-30000415 for review. Do not state, guess or infer the ultimate parent.",
+      "expected_status": "MISSING_EVIDENCE_REQUIRES_REVIEW",
+      "human_review": true,
+      "affected": [
+        "V21260706",
+        "V21260817",
+        "V21261005",
+        "V21261130"
+      ]
+    },
+    {
+      "id": "ISS-03",
+      "title": "Nordvik electrolyte attestation expired 2026-06-30, no renewal on file",
+      "category": "Supplier evidence - expired",
+      "planted": "SUPPLIER_EVIDENCE/NordvikElectrolyte_Supplier_Attestation_2025-2026.pdf covers materials delivered through 2026-06-30. No later Nordvik attestation exists in the customer files.",
+      "why_realistic": "Annual supplier attestations lapse when procurement does not chase renewals.",
+      "truth": "A renewal for 2026-07-01 to 2027-06-30 was signed by Nordvik but never sent to Volterra.",
+      "customer_evidence": "Electrolyte lots in MES/material_consumption.csv with component_lot_received after 2026-06-30 are not covered by any attestation on file.",
+      "expected_behavior": "Mark electrolyte supplier evidence as EXPIRED for finished lots that consumed MAT-30000520 lots received after 2026-06-30, and flag those lots for review. Lots using electrolyte received on or before 2026-06-30 are supported. Do not assume a renewal exists.",
+      "expected_status": "EXPIRED_EVIDENCE_REQUIRES_REVIEW",
+      "human_review": true,
+      "affected": [
+        "V21260706",
+        "LP5260706",
+        "LP5260803",
+        "V21260817",
+        "LP5260908",
+        "V21261005",
+        "LP5261005",
+        "LP5261102",
+        "V21261130",
+        "LP5261201"
+      ]
+    },
+    {
+      "id": "ISS-04",
+      "title": "VX-2170 BOM revision C effective 2026-07-01 (separator change)",
+      "category": "Effective-dated BOM",
+      "planted": "PLM/bom.xlsx and PLM/product_master.xlsx contain VX-2170 revision B (2026-01-15 to 2026-06-30) and revision C (from 2026-07-01, ECN-2026-031). Revision C replaces RM-SEP-016 (Tamarack) with RM-SEP-021 (Eastbay).",
+      "why_realistic": "Engineering change notices switch suppliers mid-year for cost reasons.",
+      "truth": "Lots started on or after 2026-07-01 were built to revision C; MES consumption confirms MAT-30000415 was used.",
+      "customer_evidence": "BOM effectivity dates; MES consumption of MAT-30000415 only on lots started on or after 2026-07-01.",
+      "expected_behavior": "Assign each VX-2170 lot to the BOM revision in effect on its production start date and evaluate supplier evidence against that revision's materials.",
+      "expected_status": "RESOLVED_BY_EFFECTIVITY",
+      "human_review": false,
+      "affected": [
+        "V21260209",
+        "V21260309",
+        "V21260406",
+        "V21260526",
+        "V21260706",
+        "V21260817",
+        "V21261005",
+        "V21261130"
+      ]
+    },
+    {
+      "id": "ISS-05",
+      "title": "No qualification report covers VX-2170 revision C",
+      "category": "Product evidence - missing",
+      "planted": "QUALITY/ contains VX2170_RevB_Qualification_Report.pdf only. Page 1 states the report applies only to revision B.",
+      "why_realistic": "Re-qualification after a material change is often scheduled but not completed before production continues.",
+      "truth": "Revision C cells have the same rated capacity (5.0 Ah); they were simply never re-tested and documented.",
+      "customer_evidence": "No test report for VX-2170 revision C. PLM still lists 5.0 Ah for revision C.",
+      "expected_behavior": "Mark capacity and specification evidence for VX-2170 revision C lots as MISSING and flag for review. The estimate may use the PLM value 5.0 Ah, labelled as not supported by a test report.",
+      "expected_status": "MISSING_EVIDENCE_REQUIRES_REVIEW",
+      "human_review": true,
+      "affected": [
+        "V21260706",
+        "V21260817",
+        "V21261005",
+        "V21261130"
+      ]
+    },
+    {
+      "id": "ISS-06",
+      "title": "VX-LFP50 rated capacity conflict: PLM 50.0 Ah vs draft test report 48.6 Ah",
+      "category": "Conflicting evidence",
+      "planted": "PLM/product_master.xlsx RATED_CAPACITY_AH = 50.0; QUALITY/VXLFP50_RevA_Qualification_Report_DRAFT.pdf page 3 'Declared rated capacity: 48.6 Ah'. The report is a draft with no reviewer signature.",
+      "why_realistic": "PLM attributes often hold the design target and are not updated after test results.",
+      "truth": "True rated capacity is 48.6 Ah; the PLM value is a stale design target.",
+      "customer_evidence": "Two sources disagree; the only test evidence is an unapproved draft.",
+      "expected_behavior": "Mark VX-LFP50 rated capacity as CONFLICTING, show the credit under both values ($54,432.00 to $56,000.00), mark neither as supported, and flag for review.",
+      "expected_status": "CONFLICTING_EVIDENCE_REQUIRES_REVIEW",
+      "human_review": true,
+      "affected": [
+        "LP5260608",
+        "LP5260706",
+        "LP5260803",
+        "LP5260908",
+        "LP5261005",
+        "LP5261102",
+        "LP5261201"
+      ]
+    },
+    {
+      "id": "ISS-07",
+      "title": "MES order confirmation exceeds finished-lot quantity for MO-26-0171 by 62 cells",
+      "category": "Quantity discrepancy",
+      "planted": "MES/production_orders.csv MO-26-0171 qty_good = 6212; MES/material_consumption.csv fg_lot_qty for lot V21260706 = 6150, and material consumed corresponds to 6150 good + 288 scrap cells.",
+      "why_realistic": "Order confirmations are sometimes double-posted after rework while the lot record is correct.",
+      "truth": "6150 good cells; 62 reworked cells were confirmed twice.",
+      "customer_evidence": "Two MES records disagree by 62 cells; material consumption supports the lower figure.",
+      "expected_behavior": "Flag the 62-cell discrepancy on MO-26-0171 for review and use the finished-lot quantity (6150) for available-to-sell calculations, showing both values.",
+      "expected_status": "DISCREPANCY_REQUIRES_REVIEW",
+      "human_review": true,
+      "affected": [
+        "V21260706"
+      ]
+    },
+    {
+      "id": "ISS-08",
+      "title": "B-grade invoice line cannot be linked to an eligible product or production lot",
+      "category": "Unmatched / ambiguous record",
+      "planted": "ERP/sales.csv invoice 90041233: MATNR MAT-10004759 'VXLFP50 CELL B-GRADE', 140 EA to Circuit Loop Recycling LLC, no batch (CHARG blank). MAT-10004759 is not in the PLM product master or MES item master.",
+      "why_realistic": "Off-spec product is sold to recyclers under separate material numbers outside normal lot tracking.",
+      "truth": "Downgraded VX-LFP50 cells set aside from 2026 scrap counts after failing outgoing capacity QC.",
+      "customer_evidence": "Description resembles VX-LFP50 but no identifier or lot links it to an eligible product.",
+      "expected_behavior": "Exclude the line from the credit estimate and flag it for review as an unmatched sales record. Do not map it to VX-LFP50 based on the description.",
+      "expected_status": "EXCLUDED_UNMATCHED_REQUIRES_REVIEW",
+      "human_review": true,
+      "affected": [
+        "90041233"
+      ]
+    }
+  ],
+  "tax_rules_applied": {
+    "BATTERY_CELL_RATE_PER_KWH": "Form 7207 (Rev. December 2025), Part II, line 5a, column (c): 'Battery cell ... kilowatt-hour basis $ 35.00' (docs/compliance/f7207.pdf, page 1).",
+    "BATTERY_CELL_MIN_ENERGY_DENSITY_WH_PER_L": "Instructions for Form 7207 (Rev. December 2025), Line 5a: 'an energy density of not less than 100 watt-hours per liter' (docs/compliance/i7207--2025.pdf, page 5).",
+    "BATTERY_CELL_MIN_ENERGY_WH": "Instructions for Form 7207, Line 5a: 'capable of storing at least 12 watt-hours of energy' (docs/compliance/i7207--2025.pdf, page 5).",
+    "BATTERY_CELL_MAX_CAPACITY_TO_POWER_RATIO": "Instructions for Form 7207, Line 5a: 'the capacity must not exceed a capacity-to-power ratio not exceeding 100:1' (docs/compliance/i7207--2025.pdf, page 5).",
+    "CAPACITY_KWH_BASIS": "Instructions for Form 7207, Column (d) for lines 5a-5c: aggregate capacity is 'the number of eligible components produced and sold by the capacity of each component expressed on a kilowatt-hour basis' (docs/compliance/i7207--2025.pdf, page 5).",
+    "PHASE_OUT_FACTOR": "Instructions for Form 7207, 'Phase out and termination': the credit phases out for eligible components sold after 2029 (docs/compliance/i7207--2025.pdf, page 3). 2026 sales therefore use 100%.",
+    "QUALIFIED_SALE": "Instructions for Form 7207, Special Rules - Qualified sales (docs/compliance/i7207--2025.pdf, page 2)."
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "assumption": "kWh per cell = nominal voltage (V) x rated capacity (Ah) / 1000, using the rated capacity declared in the qualification report.",
+      "why": "The Form 7207 instructions express capacity on a kWh basis but the source documents in docs/compliance/ do not specify which test value (rated vs. measured mean) to use. Rated capacity is the conservative, conventional basis."
+    },
+    {
+      "id": "A2",
+      "assumption": "Only sales invoiced in calendar 2026 count toward the 2026 credit; all 2026 sales are of cells produced in 2026.",
+      "why": "Production starts in 2026 and there is no opening inventory, so no cross-year production/sale timing question arises."
+    },
+    {
+      "id": "A3",
+      "assumption": "Volterra claims credits only for battery cells. Electrode active materials and other inputs are purchased from suppliers and are not claimed by Volterra.",
+      "why": "Dataset scope (per design approval)."
+    }
+  ],
+  "unresolved_rules": [
+    {
+      "id": "U1",
+      "topic": "Material assistance from prohibited foreign entities (material assistance cost ratio)",
+      "status": "NOT COMPUTED - requires professional review",
+      "why": "The Form 7207 instructions state that eligible components may not include material assistance from a prohibited foreign entity for tax years beginning after July 4, 2025 (docs/compliance/i7207--2025.pdf, page 2), but the official calculation methodology and threshold guidance are not among the documents in docs/compliance/. The dataset supplies the inputs (BOM quantities, purchase prices, supplier evidence); no pass/fail is computed."
+    }
+  ],
+  "expected": {
+    "product_facts": {
+      "VX-2170": {
+        "volume_l": 0.02425,
+        "by_capacity_value": {
+          "5.0": {
+            "energy_wh": 18.0,
+            "energy_density_wh_per_l": 742.4,
+            "capacity_to_power_ratio": 0.25,
+            "kwh_per_cell": 0.018,
+            "definition_checks": {
+              "energy_wh_ge_min": true,
+              "energy_density_ge_min": true,
+              "capacity_to_power_le_max": true
+            },
+            "meets_battery_cell_definition": true
+          }
+        }
+      },
+      "VX-LFP50": {
+        "volume_l": 0.4036,
+        "by_capacity_value": {
+          "48.6": {
+            "energy_wh": 155.52,
+            "energy_density_wh_per_l": 385.3,
+            "capacity_to_power_ratio": 0.972,
+            "kwh_per_cell": 0.15552,
+            "definition_checks": {
+              "energy_wh_ge_min": true,
+              "energy_density_ge_min": true,
+              "capacity_to_power_le_max": true
+            },
+            "meets_battery_cell_definition": true
+          },
+          "50.0": {
+            "energy_wh": 160.0,
+            "energy_density_wh_per_l": 396.4,
+            "capacity_to_power_ratio": 1.0,
+            "kwh_per_cell": 0.16,
+            "definition_checks": {
+              "energy_wh_ge_min": true,
+              "energy_density_ge_min": true,
+              "capacity_to_power_le_max": true
+            },
+            "meets_battery_cell_definition": true
+          }
+        }
+      }
+    },
+    "lot_open_issues": {
+      "V21260209": [],
+      "V21260309": [],
+      "V21260406": [],
+      "V21260526": [],
+      "LP5260608": [
+        "ISS-06"
+      ],
+      "V21260706": [
+        "ISS-02",
+        "ISS-03",
+        "ISS-05",
+        "ISS-07"
+      ],
+      "LP5260706": [
+        "ISS-03",
+        "ISS-06"
+      ],
+      "LP5260803": [
+        "ISS-03",
+        "ISS-06"
+      ],
+      "V21260817": [
+        "ISS-02",
+        "ISS-03",
+        "ISS-05"
+      ],
+      "LP5260908": [
+        "ISS-03",
+        "ISS-06"
+      ],
+      "V21261005": [
+        "ISS-02",
+        "ISS-03",
+        "ISS-05"
+      ],
+      "LP5261005": [
+        "ISS-03",
+        "ISS-06"
+      ],
+      "LP5261102": [
+        "ISS-03",
+        "ISS-06"
+      ],
+      "V21261130": [
+        "ISS-02",
+        "ISS-03",
+        "ISS-05"
+      ],
+      "LP5261201": [
+        "ISS-03",
+        "ISS-06"
+      ]
+    },
+    "production": {
+      "VX-2170": {
+        "orders": 8,
+        "mes_reported_good": 51271,
+        "finished_lot_good": 51209,
+        "scrap": 1229,
+        "planned": 52500
+      },
+      "VX-LFP50": {
+        "orders": 7,
+        "mes_reported_good": 12492,
+        "finished_lot_good": 12492,
+        "scrap": 308,
+        "planned": 12800
+      }
+    },
+    "sales": {
+      "VX-2170": {
+        "invoices_2026": 16,
+        "lines_2026": 23,
+        "qty_2026": 46500,
+        "revenue_2026": 180425.0,
+        "qty_excluded_2027": 3800,
+        "invoices_excluded_2027": [
+          "90041232"
+        ],
+        "ending_inventory_2026_12_31": 4709
+      },
+      "VX-LFP50": {
+        "invoices_2026": 7,
+        "lines_2026": 12,
+        "qty_2026": 10000,
+        "revenue_2026": 580000.0,
+        "qty_excluded_2027": 1500,
+        "invoices_excluded_2027": [
+          "90041231"
+        ],
+        "ending_inventory_2026_12_31": 2492
+      }
+    },
+    "excluded_unmatched_lines": [
+      {
+        "invoice": "90041233",
+        "erp_material": "MAT-10004759",
+        "qty": 140,
+        "amount": 1260.0
+      }
+    ],
+    "sales_counts": {
+      "invoices_total": 26,
+      "lines_total": 39,
+      "invoices_2026": 24,
+      "lines_2026": 36
+    },
+    "credit": {
+      "VX-2170": {
+        "units_sold_2026": 46500,
+        "capacity_conflict": false,
+        "by_capacity_basis": {
+          "plm_value": {
+            "rated_capacity_ah": 5.0,
+            "kwh_per_cell": 0.018,
+            "kwh_total": 837.0,
+            "credit": 29295.0,
+            "credit_no_open_issues": 15085.35,
+            "credit_with_open_issues": 14209.65
+          }
+        },
+        "low": 29295.0,
+        "high": 29295.0
+      },
+      "VX-LFP50": {
+        "units_sold_2026": 10000,
+        "capacity_conflict": true,
+        "by_capacity_basis": {
+          "plm_value": {
+            "rated_capacity_ah": 50.0,
+            "kwh_per_cell": 0.16,
+            "kwh_total": 1600.0,
+            "credit": 56000.0,
+            "credit_no_open_issues": 0.0,
+            "credit_with_open_issues": 56000.0
+          },
+          "test_report_value": {
+            "rated_capacity_ah": 48.6,
+            "kwh_per_cell": 0.15552,
+            "kwh_total": 1555.2,
+            "credit": 54432.0,
+            "credit_no_open_issues": 0.0,
+            "credit_with_open_issues": 54432.0
+          }
+        },
+        "low": 54432.0,
+        "high": 56000.0
+      }
+    },
+    "credit_total": {
+      "low": 83727.0,
+      "high": 85295.0,
+      "no_open_issues": 15085.35
+    },
+    "credit_touched_by_issue_plm_basis": {
+      "ISS-06": 56000.0,
+      "ISS-03": 63792.05,
+      "ISS-02": 14209.65,
+      "ISS-05": 14209.65,
+      "ISS-07": 3874.5
+    },
+    "material_assistance_inputs": {
+      "status": "NOT COMPUTED - requires professional review (tax_rules.UNRESOLVED_RULES U1)",
+      "cost_per_cell_by_bom_revision": {
+        "VX-2170 rev B": {
+          "direct_material_cost_per_cell": 1.3025,
+          "lines": [
+            {
+              "material": "MAT-30000102",
+              "supplier": "Great Plains Cathode LLC",
+              "qty_per_cell": 0.0245,
+              "uom": "KG",
+              "unit_price": 38.0,
+              "cost_per_cell": 0.931
+            },
+            {
+              "material": "MAT-30000205",
+              "supplier": "Kestrel Graphite Corp.",
+              "qty_per_cell": 0.0142,
+              "uom": "KG",
+              "unit_price": 8.2,
+              "cost_per_cell": 0.1164
+            },
+            {
+              "material": "MAT-30000411",
+              "supplier": "Tamarack Membrane Inc.",
+              "qty_per_cell": 0.081,
+              "uom": "M2",
+              "unit_price": 1.1,
+              "cost_per_cell": 0.0891
+            },
+            {
+              "material": "MAT-30000520",
+              "supplier": "Nordvik Electrolyte AB",
+              "qty_per_cell": 0.0052,
+              "uom": "KG",
+              "unit_price": 9.8,
+              "cost_per_cell": 0.051
+            },
+            {
+              "material": "MAT-30000610",
+              "supplier": "Lakeshore Can & Stamping Inc.",
+              "qty_per_cell": 1,
+              "uom": "EA",
+              "unit_price": 0.115,
+              "cost_per_cell": 0.115
+            }
+          ]
+        },
+        "VX-2170 rev C": {
+          "direct_material_cost_per_cell": 1.2823,
+          "lines": [
+            {
+              "material": "MAT-30000102",
+              "supplier": "Great Plains Cathode LLC",
+              "qty_per_cell": 0.0245,
+              "uom": "KG",
+              "unit_price": 38.0,
+              "cost_per_cell": 0.931
+            },
+            {
+              "material": "MAT-30000205",
+              "supplier": "Kestrel Graphite Corp.",
+              "qty_per_cell": 0.0142,
+              "uom": "KG",
+              "unit_price": 8.2,
+              "cost_per_cell": 0.1164
+            },
+            {
+              "material": "MAT-30000415",
+              "supplier": "Eastbay Separator Co., Ltd.",
+              "qty_per_cell": 0.081,
+              "uom": "M2",
+              "unit_price": 0.85,
+              "cost_per_cell": 0.0688
+            },
+            {
+              "material": "MAT-30000520",
+              "supplier": "Nordvik Electrolyte AB",
+              "qty_per_cell": 0.0052,
+              "uom": "KG",
+              "unit_price": 9.8,
+              "cost_per_cell": 0.051
+            },
+            {
+              "material": "MAT-30000610",
+              "supplier": "Lakeshore Can & Stamping Inc.",
+              "qty_per_cell": 1,
+              "uom": "EA",
+              "unit_price": 0.115,
+              "cost_per_cell": 0.115
+            }
+          ]
+        },
+        "VX-LFP50 rev A": {
+          "direct_material_cost_per_cell": 10.45,
+          "lines": [
+            {
+              "material": "MAT-30000108",
+              "supplier": "Prairie Phosphate Materials Inc.",
+              "qty_per_cell": 0.38,
+              "uom": "KG",
+              "unit_price": 9.5,
+              "cost_per_cell": 3.61
+            },
+            {
+              "material": "MAT-30000205",
+              "supplier": "Kestrel Graphite Corp.",
+              "qty_per_cell": 0.165,
+              "uom": "KG",
+              "unit_price": 8.2,
+              "cost_per_cell": 1.353
+            },
+            {
+              "material": "MAT-30000411",
+              "supplier": "Tamarack Membrane Inc.",
+              "qty_per_cell": 1.15,
+              "uom": "M2",
+              "unit_price": 1.1,
+              "cost_per_cell": 1.265
+            },
+            {
+              "material": "MAT-30000520",
+              "supplier": "Nordvik Electrolyte AB",
+              "qty_per_cell": 0.14,
+              "uom": "KG",
+              "unit_price": 9.8,
+              "cost_per_cell": 1.372
+            },
+            {
+              "material": "MAT-30000655",
+              "supplier": "Lakeshore Can & Stamping Inc.",
+              "qty_per_cell": 1,
+              "uom": "EA",
+              "unit_price": 2.85,
+              "cost_per_cell": 2.85
+            }
+          ]
+        }
+      },
+      "consumed_material_cost_2026_by_supplier": {
+        "Great Plains Cathode LLC": 48819.78,
+        "Prairie Phosphate Materials Inc.": 46208.0,
+        "Kestrel Graphite Corp.": 23424.28,
+        "Tamarack Membrane Inc.": 18374.95,
+        "Eastbay Separator Co., Ltd.": 1923.53,
+        "Nordvik Electrolyte AB": 20233.84,
+        "Lakeshore Can & Stamping Inc.": 42510.37
+      }
+    },
+    "lots_by_issue": {
+      "ISS-01": [],
+      "ISS-02": [
+        "V21260706",
+        "V21260817",
+        "V21261005",
+        "V21261130"
+      ],
+      "ISS-03": [
+        "V21260706",
+        "LP5260706",
+        "LP5260803",
+        "V21260817",
+        "LP5260908",
+        "V21261005",
+        "LP5261005",
+        "LP5261102",
+        "V21261130",
+        "LP5261201"
+      ],
+      "ISS-04": [],
+      "ISS-05": [
+        "V21260706",
+        "V21260817",
+        "V21261005",
+        "V21261130"
+      ],
+      "ISS-06": [
+        "LP5260608",
+        "LP5260706",
+        "LP5260803",
+        "LP5260908",
+        "LP5261005",
+        "LP5261102",
+        "LP5261201"
+      ],
+      "ISS-07": [
+        "V21260706"
+      ],
+      "ISS-08": []
+    }
+  }
+}
